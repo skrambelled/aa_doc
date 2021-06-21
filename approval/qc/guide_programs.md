@@ -1,13 +1,15 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 There are many different ways you can get started coding as there are lots of
 programs out there nowadays to use. Below is a guide on how to get started
 with the recommended setup of having an FTP client and offline code editor,
 so that you can edit files in a modern editor and then upload them via FTP to
 Ancient Anguish, rather than trying to use the cumbersome in-game editor.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 The first few steps outline how to download and setup the FTP client and the
 offline code editor, and then in the later half it discusses some tips and
 tricks for changing the preferences in the code editor that affect the
@@ -19,8 +21,10 @@ do not use these two programs most of the settings and preferences still
 apply and you should figure out the equivalent settings in whatever program
 that you choose to use instead.
 
-EXAMPLE
------------------------------------------------------------------------------
+---
+
+## EXAMPLE
+
 FTP Step 1: download "FileZilla" and install it.
 
 FTP Step 2: in the toolbar, go to file, then site manager, and add a new site
@@ -61,6 +65,8 @@ indents is different in every program, while whitespace is universal.
 Editor Trick: in Notepad++ you can quickly eliminate all trailing whitespace
 in a document and then save the file by pressing alt+shift+s on the keyboard.
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+---
+
+## SEE ALSO
+
+[qc](.)

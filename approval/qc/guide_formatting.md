@@ -1,5 +1,5 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 The formatting of a file is not just there for cosmetic reasons, it helps to
 create a flow that makes things easier for reviewers to read through. If
 everyone were to use their own style it slows down the review process because
@@ -9,8 +9,10 @@ which means faster returns on your projects, and reduces the waiting time of
 everyone else in line too. The guidelines below will help to reduce the width
 and length of code, while improving consistancy between projects.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 Wrapping: the game has a 77 character limit that must be adhered to. When
 typing out something like an add_senses you must utilize all available
 whitespace on each line until you reach the 77 character limit and then
@@ -25,21 +27,25 @@ your editor's preferences to "replace tabs with spaces" or the equivalent
 feature of your editor. This is necessary because tabs display with different
 lengths for every program, while whitespaces are universal and consistant.
 
-EXAMPLE
------------------------------------------------------------------------------
-  set_long("This rat is massive, and it stares at you intently with its "
-           "sharp teeth, and long tail. The black, matted fur of its body "
-           "shimmers occasionally in the light while it moves quickly about "
-           "the room in a frantic manner.");
+---
+
+## EXAMPLE
+
+```C
+set_long("This rat is massive, and it stares at you intently with its sharp "
+  "teeth, and long tail. The black, matted fur of its body shimmers "
+  "occasionally in the light while it moves quickly about the room in a "
+  "frantic manner.");
 
 void some_function() {
   if(something) {
-    do_something;
+    do_something();
   } else {
-    do_something_else;
+    do_something_else();
   }
 }
+```
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+## SEE ALSO
+
+[qc](.)

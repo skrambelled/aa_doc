@@ -1,13 +1,15 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 The following is a checklist of everything you must playtest in your area
 before submitting it to the queue. It takes dozens of hours for a Quality
 Control member to do a full review on a creator-sized project, and it is not
 their responsibility to take your project as a rough draft and turn it into a
 finished product--that is your job.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 Quality Control is there check that things are standardized, logical, that
 the code is sound, and a mortal will find the area to behave in expected
 ways. It cannot be stressed enough that you as a coder need to thoroughly
@@ -19,9 +21,12 @@ Any project that is in poor shape will be sent back to the author, and low
 quality projects will be processed after higher quality projects, regardless
 of the submission date. Follow the checklist below to ensure a quick install.
 
-EXAMPLE
------------------------------------------------------------------------------
-File Checklist:
+---
+
+## EXAMPLE
+
+### File Checklist
+
 - All files (even plain text) must have a blank line at the end of file.
 - All hidden tabs and trailing whitespace must be cleaned from every file.
 - Do not use more than 1 consecutive blank line to separate code.
@@ -33,7 +38,8 @@ File Checklist:
 - Remove unnecessary prototypes (redirects, keywords, drama, etcetera).
 - Use logical folder names, such as room, monster, object, armour, etcetera.
 
-General Checklist:
+### General Checklist
+
 - All communication to a player should be consistent in the wording.
 - All descriptions must be written out as complete sentences.
 - All rooms, monsters, objects, and daemons must use #pragma strict_types.
@@ -60,7 +66,8 @@ General Checklist:
 - Use the QC hat tool to 'hatcheck' your project, and fix all issues listed.
 - Use the QC hat tool to 'hatmap' your project, it must not have errors.
 
-Room Checklist:
+### Room Checklist
+
 - Base files should be used for add_senses on groups of similar room types.
 - Check a player's body position before attempting to move them.
 - Check room and door exits to see that they work properly.
@@ -88,7 +95,8 @@ Room Checklist:
 - Use the block_sit_messages and other related functions for interactivity.
 - Water areas, such as creeks, rivers, ponds, and lakes must allow fishing.
 
-Monster Checklist:
+### Monster Checklist
+
 - All monsters must have a male or female gender except for animals/undead.
 - Banish the names of monsters that you use in your projects.
 - Check that monsters properly wear and wield their equipment.
@@ -103,7 +111,8 @@ Monster Checklist:
 - The set_race has a maximum length of 15 characters, no exceptions.
 - When using "guard" code you must have a check for rogues to sneak past.
 
-Object Checklist:
+### Object Checklist
+
 - All objects (excluding invisible) must have 1 or more weight.
 - Code objects as standalone files, rather than directly onto monsters.
 - Mudlib gems cannot be saved into their own file, they must be cloned.
@@ -111,6 +120,8 @@ Object Checklist:
 - The set_material is required on all types of objects.
 - The set_smell, set_taste, and set_touch are required on all objects.
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+---
+
+## SEE ALSO
+
+[qc](.)

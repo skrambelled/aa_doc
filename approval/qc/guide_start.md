@@ -1,5 +1,5 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 The following guide explains how to get started building an area in a way
 that will get through Quality Control much faster and easier.
 
@@ -9,8 +9,10 @@ because you need to build around your base files, not the other way around.
 Too many coders are inefficiently coding entire areas and then realizing
 later they have no base files, and fixing then is a lot more work.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 A base file room is a room that contains all of the shared features of a
 certain landscape. For example, if you are creating an area like Harkke
 Forest where there is outdoor ground, dirt, grass, trees, and other forest
@@ -61,8 +63,8 @@ exploring the area as if you were a mortal and try to Quality Control your
 own project. Be sure that it all works properly and it is highly polished
 before submitting it to the queue--unfinished projects will be rejected.
 
-EXAMPLE
------------------------------------------------------------------------------
+## EXAMPLE
+
 - Create /w/wizardname/areaname/ as your project folder.
 - Create a header file (areaname_defs.h) in your project folder.
 - Create /w/wizardname/areaname/approval/ to keep documents in.
@@ -75,6 +77,6 @@ EXAMPLE
 - Create a method for entering the area, such as a workroom exit.
 - Read the other Quality Control guides and examples for more information.
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+## SEE ALSO
+
+[qc](.)

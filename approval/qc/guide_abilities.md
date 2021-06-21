@@ -1,13 +1,15 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 Any actions that a mortal can use in your projects which are related to their
 'abilities' must perform an ability check. For example, if you have a room
 where a player can climb a cliff it needs to check the player's climbing
 ability, or if the player needs to search to find something it needs to check
 their searching ability, and so forth.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 Ability checks need to be set according to the difficulty of an area, which
 is determined by analyzing the levels of monsters within it and using the
 provided formula to set the ability checks accordingly.
@@ -19,8 +21,9 @@ replace the "MAX/MIN" with those results. In other words, if your area has a
 level 19 monster then you would end up with random(76-38)+38 as the outcome.
 This formula gives players a consistant experience from area to area.
 
-EXAMPLE
------------------------------------------------------------------------------
+## EXAMPLE
+
+```C
 #include <body_position.h>
 
 void init() {
@@ -52,7 +55,10 @@ int do_climb(string place) {
   write("You fail to climb up the cliff.\n");
   return 1;
 }
+```
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+---
+
+## SEE ALSO
+
+[qc](.)

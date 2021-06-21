@@ -1,11 +1,13 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 The four major departments that oversee projects are World, Quality Control,
 Balance, and Map. If you have questions you can mail those departments using
-'mail <world/qc/balance/map>' respectively, and a team member will reply.
+`mail <world/qc/balance/map>` respectively, and a team member will reply.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 The purpose of the World department is to make sure that the game's overall
 theme is maintained, and to create a cohesive and consistent theme that is
 free of cliches or otherwise undesirable features.
@@ -22,8 +24,10 @@ difficulty of the area, and also consistent with the established guidelines.
 The purpose of the Map department is to make sure the layout of the landscape
 around the continents is cohesive and consistent, and fits the game's theme.
 
-EXAMPLE
------------------------------------------------------------------------------
+---
+
+## EXAMPLE
+
 The following explains how to plan a project from start to finish.
 
 If you were designing a new creator-sized area, the first thing you need to
@@ -73,11 +77,14 @@ bugs/suggestion boards, and your wizard log to see if there are any problems
 with your area that mortals are finding and see if you can fix them.
 
 Some other events that will occur or need to be performed are as follows:
+
 - Add an entry about the area into /doc/helpdir/newstuff.
 - Make a post on the Announcement board.
 - Perform a world shout about the expansion after installation.
 - Promotion of wizard to Creator status if relevant, and 'help credits'.
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+---
+
+## SEE ALSO
+
+[qc](.)

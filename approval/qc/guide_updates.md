@@ -1,11 +1,13 @@
-SYNOPSIS
------------------------------------------------------------------------------
+# SYNOPSIS
+
 If you would like to make an improvement/bug fix to some code that is already
 installed into the game (projects accessible by mortals), whether it is your
 own code or someone else's, then follow the steps outlined below.
 
-DESCRIPTION
------------------------------------------------------------------------------
+---
+
+## DESCRIPTION
+
 Any bugs, typos, ideas, and praises that mortals have submitted using those
 in-game commands can be found inside the /w/wizardname/log/ directory.
 
@@ -37,6 +39,8 @@ If you are in doubt or have any questions please ask the Quality Control Arch
 before attempting to proceed with changes that might have repercussions or
 are large in scope, even if they are necessary changes.
 
-SEE ALSO
------------------------------------------------------------------------------
-'man qc'
+---
+
+## SEE ALSO
+
+[qc](.)
