@@ -1,3 +1,3 @@
 # /doc/
 
-This will contain all of /doc/ for anguish.org
+- [doc/approval/](./approval/README.md)

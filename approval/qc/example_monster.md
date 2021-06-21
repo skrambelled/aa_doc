@@ -1,3 +1,6 @@
+# Example monster
+
+```C
 #pragma strict_types
 #include "../example_header.h"
 #include <living.h>
@@ -26,7 +29,7 @@ void create() {
               "The guard lunges at # and lands a powerful hit!"}));
 
   load_chat(8, ({"The guard perks up, as if detecting something.",
-                 "The guard says: Those orcs don't scare me.",
+                 "@common language@Those orcs don't scare me.",
                  "The guard prepares himself to go on duty."}));
 
   load_a_chat(8, ({"The guard lets out a grunt as he attacks.",
@@ -39,3 +42,4 @@ void create() {
   clone_object(WEAPON"example_weapon")->move(this_object());
   command("wield shortsword");
 }
+```

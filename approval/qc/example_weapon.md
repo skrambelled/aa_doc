@@ -1,3 +1,6 @@
+# Example weapon
+
+```C
 #pragma strict_types
 #include <weapon_lib.h>
 inherit "obj/weapon";
@@ -15,7 +18,6 @@ void create() {
            "attached to a lightweight, but sharp blade.");
 
   set_identify("You see a blacksmith adding this sword to a pile.");
-
   set_smell("You smell the sword and detect the scent of polish.");
   set_taste("You taste the sword and dislike the tang of the polish.");
   set_touch("You touch the sword and admire its polished nature.");
@@ -28,3 +30,4 @@ void create() {
   set_damage(9);
   set_parry_ac(14);
 }
+```

@@ -1,3 +1,6 @@
+# Example armour
+
+```C
 #pragma strict_types
 #include <armour_lib.h>
 inherit "obj/armour";
@@ -15,7 +18,6 @@ void create() {
            "the wearer's back to keep it firmly held in place.");
 
   set_identify("You see a blacksmith adding this breastplate to a pile.");
-
   set_smell("You smell the breastplate and detect the scent of polish.");
   set_taste("You taste the breastplate and dislike the tang of the polish.");
   set_touch("You touch the breastplate and admire its polished nature.");
@@ -27,3 +29,4 @@ void create() {
   set_hbody_ac(10);
   set_armour(PLATEMAIL);
 }
+```

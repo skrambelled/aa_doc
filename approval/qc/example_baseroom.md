@@ -1,11 +1,13 @@
+# Example baseroom
+
+```C
 #pragma strict_types
-#include <room.h>
 inherit "room/room";
 
 void create() {
   ::create();
+
   set_light(1);
-  set_terrain("none");
   set_search("You search around, but discover no secrets.");
   set_smell("You smell around and detect a woody scent.");
   set_sound("You listen intently and hear conversation nearby.");
@@ -17,7 +19,7 @@ void create() {
     "smell": "You smell the barracks and the scent of wood overwhelms you.",
     "sound": "You listen to the barracks and hear conversations nearby.",
     "taste": "You taste the barracks and dislike the woody tang.",
-    "touch": "You touch the barracks and admire the quality construction.",
+    "touch": "You touch the barracks and admire the quality construction."
   ]));
 
   add_sound(({"conversations", "conversation",}),
@@ -26,3 +28,4 @@ void create() {
 
 int query_x_coord() { return 0; }
 int query_y_coord() { return 0; }
+```
