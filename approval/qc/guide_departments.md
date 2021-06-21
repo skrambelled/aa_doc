@@ -87,4 +87,4 @@ Some other events that will occur or need to be performed are as follows:
 
 ## SEE ALSO
 
-[qc](.)
+- [qc](./qc/README.md)

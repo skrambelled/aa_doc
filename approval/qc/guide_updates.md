@@ -43,4 +43,4 @@ are large in scope, even if they are necessary changes.
 
 ## SEE ALSO
 
-[qc](.)
+- [qc](./qc/README.md)

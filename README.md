@@ -1,3 +1,3 @@
 # /doc/
 
-- [doc/approval](./approval/README.md)
+- [doc/approval/](./approval/README.md)

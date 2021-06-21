@@ -79,4 +79,4 @@ before submitting it to the queue--unfinished projects will be rejected.
 
 ## SEE ALSO
 
-[qc](.)
+- [qc](./qc/README.md)

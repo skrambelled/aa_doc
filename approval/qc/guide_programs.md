@@ -69,4 +69,4 @@ in a document and then save the file by pressing alt+shift+s on the keyboard.
 
 ## SEE ALSO
 
-[qc](.)
+- [qc](./qc/README.md)

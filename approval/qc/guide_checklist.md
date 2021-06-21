@@ -124,4 +124,4 @@ of the submission date. Follow the checklist below to ensure a quick install.
 
 ## SEE ALSO
 
-[qc](.)
+- [qc](./qc/README.md)
