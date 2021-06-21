@@ -1,3 +1,3 @@
-# aa_project
+# /doc/
 
-This is a template repo for Ancient Anguish projects that may use the ftp workflow.
+This will contain all of /doc/ for anguish.org

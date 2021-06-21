@@ -1,0 +1,95 @@
+12345678901234567890123456789012345678901234567890123456789012345678901234
+MUDLIB.HowTo
+
+Dated: 02 June 2009
+
+This file documents in simple terms the process necessary to submit a change
+to mudlib.
+
+Firstly some questions to ask yourself.
+
+1. Does this change actually fix what it is intended to fix?
+   You should document the problem and the solution, explaining how and 
+   why the fix works.
+   
+2. Can I prove it works?
+   You should supply all necessary information that proves the fix works.  
+   You should have some way of demonstrating how to prove the fix works.  
+   For example you might provide a test object so the fix can be tested.
+   
+3. How did I do it?
+   You should provide a before and after file. For example if you change 
+   room.c then you should have 2 files. (room.c and room_fix.c)
+   
+4. Do I need to teach / inform other wizards how to use my code?
+   If your change adds new ability to code, then it must have a 'man' page
+   that explains in detail what it does and how to use it. It is important
+   to note that not everyone is of the same coding level, but they might 
+   still want to use your code.
+   
+5. Is my code 'dummy proof'?
+   By this we mean, if someone, or some object, passes incorrect parameters
+   to your code what will happen? If an object parameter is passed but does
+   not exist what will happen?
+
+The submission and review:
+All mudlib submissions are made at the normal QC submission room.
+
+As Arch of Mudlib I will look for, and do the following;
+
+1. A file showing me what the fix or addition is. What is does, how and why
+   it does it.
+   
+2. The next thing I will look for is the original copy. This can be in your 
+   directory or in it's normal place.
+   
+3. Next I will look for the new file.
+   I will then compare the new to the old. I am looking for;
+
+   a) Exact changes made.
+   b) Do the changes match the proof of the fix?
+   c) Is the code defensive? Will it fail if wrong information is used?
+   d) Does the code comply with coding standards? 
+   e) Are there any 'magic numbers' (if (x==3) then... I want to know why 3?
+
+4. If we pass to this stage, I will then test the code on the TMud.
+   Depending on what the code does, how it does it, what it is attempting to
+   achieve will all go towards what I check for.
+   
+5. I will check for any 'man' pages required and that they comply with 
+   standards.
+   
+6. Finally, if everything passes, I will install on the production mud at a
+   time that allows me to be present for the reboot.  It is important to
+   note here, that if something goes wrong at this stage, it is my fault
+   and not yours. (I didn't test it enough)
+
+
+This is by no means an exhaustive list of do's and don'ts. But it should 
+give you guidance in what you need to do, and what I need to do. I am not 
+perfect, you nor the next guy are perfect. We all make mistakes. 
+What we are striving for is a easy way for everyone to submit changes and 
+get them passed and installed.
+
+Finally, some definite No-No's.
+
+1. "Can you change line x to line y?"
+   Unless mission critical, the answer will always be "No".
+
+2. Submitting just the lines needed to effect the fix. 
+   This requires me to make the actual change, then test it, then fix the
+   code you didn't test.
+
+3. Submit code you 'think' might work.
+   It's better to discuss this type of code.
+   
+Finally, finally :)
+Mudlib type code is not for everyone. But if you feel you'd like to try,
+then please, please do.  I will offer as much help as I can to help you
+acheive your goals. I won't write the code for you, but I will certainly 
+help you to help yourself.
+
+Oliver
+Arch of Mudlib
+June 2009
+

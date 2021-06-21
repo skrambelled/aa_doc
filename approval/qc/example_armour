@@ -1,0 +1,29 @@
+#pragma strict_types
+#include <armour_lib.h>
+inherit "obj/armour";
+
+void create() {
+  ::create();
+  if(!is_clone())
+    return;
+
+  set_name("breastplate");
+  set_alias("silver breastplate");
+  set_short("a silver breastplate");
+  set_long("This breastplate is made of iron and is beautifully polished. "
+           "Thick leather straps connect to the sides and then wrap around "
+           "the wearer's back to keep it firmly held in place.");
+
+  set_identify("You see a blacksmith adding this breastplate to a pile.");
+
+  set_smell("You smell the breastplate and detect the scent of polish.");
+  set_taste("You taste the breastplate and dislike the tang of the polish.");
+  set_touch("You touch the breastplate and admire its polished nature.");
+
+  set_material(({"iron", "leather"}));
+  set_value(330);
+  set_weight(2);
+  set_armour_type("armour");
+  set_hbody_ac(10);
+  set_armour(PLATEMAIL);
+}

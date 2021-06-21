@@ -1,0 +1,36 @@
+Acoording to /w/dawg/thrown/valueproposal
+
+Proposal for value of thrown weapons:
+
+weapon value = base value + (balance) * (damage) * (usage factor) / 20
+
+- The base value is the base value of the weapon if it is not throwable.
+- The balance is the "thrown_balance" value of the weapon (affects the
+  chance to hit with the weapon).
+- The damage is the "thrown_damage" value of the weapon, plus any bonus
+  damage effects it may cause in its special hit routines (pro-rated if
+  the damage is reduced after several uses).
+- The usage factor is based on the durability, determined as follows:
+
+  Usage factor  Durability      Expected uses (estimated)
+    4             0               1
+    5            1-25             1+
+    6           26-50             2
+    7           51-75           2 to 4
+    8           76-90           5 to 10
+    9           91-99           more than 10
+   10            100            unlimited
+
+Examples:
+
+Weapon          Base    Thrown  Thrown          Usage   Formula
+Name    WC/PC   Value   Balance Damage  Durab.  Factor  Value
+------  -----   -----   ------- ------  ------  ------  -----
+dart    1/1     20      14      6       75      7       49
+knife   5/3     65      10      10      90      8       105
+javelin 8/2     152     13      20      85      8       256
+oil     1/1     20      8       26      0       4       61
+poi.kn. 5/3     65      10      10++    90      8       117
+                                (26/18)
+
+(taken directly from Dawg's file)

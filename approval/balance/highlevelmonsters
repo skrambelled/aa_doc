@@ -1,0 +1,50 @@
+** High-Level Monsters **: 
+==========================
+
+A "high-level monster" is one of level 17 to 19. High-level monsters 
+provide some of the greatest challenges to players, but they also are a rich
+source of potential game imbalances. These guidelines will help avoid those
+imbalances.
+ 
+The first question to consider is whether the monster needs to be high-level
+monsters into their area to make it popular. Don't. Make your area 
+interesting and fun to be in, not just a mindless source of experience 
+points. Boring areas with a "standard level 19 monster" will not be approved.
+ 
+Every high-level monster should be distinctive. This means it should have 
+chats, spells, emotions, keywords, and basically every other little gizmo 
+that our mudlib provides for monsters. These monsters should be truly 
+exceptional. A level 17-19 npc MUST have the above. It is recommended that
+high-level monsters behave more intelligently than a normal monster and
+should be a challenge to a party, let alone an individual player. An example
+would be a high-level mage who cast power word heal and quaffed extra healing
+potions when it was hurt.
+ 
+** All high-level monsters MUST be guarded. **
+
+Many experienced players spend their time on 'the circuit', going from one 
+easy high experience area to the next. The monsters on the circuit are 
+high-level, with no challenge in getting to them. Adding a monster to this 
+circuit will not be allowed. There must be some lower-level monsters, 
+puzzles, mini-quests, locked doors, or other barriers between players and a 
+high-level monster. Note that one easy monster or one locked door will not 
+be enough to satisfy this requirement. Make the players do some work to get
+to the big experience point challenge. If a high-level monster in your area
+has a unique, it should be especially well hidden and defended.
+
+There are limits on the number of level 17-19 monsters that you can have per
+area. They are based on the number of rooms in the area as follows:
+
+ < 16 rooms = No level 17-19 monsters
+17-24 rooms = 1 level 17-19 monster
+25-32 rooms = two level 17-19 monsters
+33 +  rooms = permission needed from Balance for more level 17-19 monsters
+
+NOTE: Your high-level monster/s MUST have varied weapon class, armour class
+      and healthpoints (not just the minimum stated in the monster document).
+      If you require assistance with this, your balancer will help if asked.
+      We encourage coders to take advantage of the higher treasure level and
+      be adventurous when coding armour and weapons for high-level monsters.
+
+
+The Balance Team.

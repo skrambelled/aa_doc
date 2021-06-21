@@ -1,0 +1,54 @@
+SYNOPSIS
+There are many different ways you can get started coding as there are lots of
+programs out there nowadays to use. Below is a guide on how to get started
+with the recommended setup of having an FTP client and offline code editor,
+so that you can edit files in a modern editor and then upload them via FTP to
+Ancient Anguish, rather than trying to use the more cumbersome in-game code
+editor.
+
+The first few steps outline how to download and setup the FTP client and the
+offline code editor, and then in the later half it is tips and tricks for
+changing the preferences in the code editor that affect the formatting of
+your code.
+
+You can use whichever FTP client and code editor you prefer, but this guide
+will focus on FileZilla and Notepad++ since they are popular, and even if you
+do not use these two programs most of the settings and preferences
+information still apply and you should figure out the equivalent settings in
+whatever program you do use.
+
+EXAMPLE
+FTP Step 1: download an FTP client, such as "FileZilla" and install it.
+
+FTP Step 2: go into the site manager and add a new site for Ancient Anguish
+with the host name "anguish.org" and use port "3001". Then in the user text
+box put your wizard's name, and for the password text box use your in-game
+wizard password. Now you can connect to the Ancient Anguish FTP server and it
+will automatically show you your personal wizard directory of /w/wizardname/
+and you can now drag and drop files to this and see them in-game.
+
+Editor Step 1: download an offline code editor, such as "Notepad++" and
+install it.
+
+Editor Step 2: in the Notepad++ settings, go to preferences and then editing
+and change the "vertical edge settings" to be "77" which will add a line that
+runs up and down on your pages showing you where the right margin is so that
+you don't write code outside of it. All text must wrap at 77 characters in
+Ancient Anguish or it causes problems for a number of telnet clients.
+
+Editor Step 3: in the Notepad++ settings, go to preferences and then new
+document and change the "format (line ending)" to be "Unix (lf)". This is
+necessary because carriage returns characters can negatively affect in-game
+viewing of code due to the way they are converted.
+
+Editor Step 4: in the Notepad++ settings, go to preferences and then language
+and change the "tab settings" to be "tab size 2" and also select the "replace
+by space." This is necessary because tab characters can negatively affect
+in-game viewing of code due to the way they are converted.
+
+Editor Trick: in Notepad++ you can quickly eliminate all "trailing
+whitespace" in a document by pressing alt+shift+s and it will remove
+whitespace and then save the file.
+
+SEE ALSO
+'man qc'

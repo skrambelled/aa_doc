@@ -1,0 +1,85 @@
+So you want to have something implemented on AA. Confused as to what to do?
+Ask around. Any level 22+ wizard should know the process, but for general
+help, read on.
+
+There are all kinds of things to create - an area, an area with a quest, a
+guild (monk, scythe, etc), or some other useful thing that might not fit
+into any other category (like a single shop). This help will try to cover
+all the possibilities, but again, ask around if you aren't sure.
+
+I want to do something... but what?
+     Read the Idea board for ideas. Also, read the planners board all the
+     way through. See what people started, and see if others' ideas jog
+     some of your own. Read the official AA history (/doc/world/AA_history)
+     and see if there is some untold portion of AA's past that you would
+     like to code. Remember that an area usually is at least 15 rooms in
+     size, and should have its own "narrative" and purpose. Areas that
+     are just hack'n'slash won't be approved, not will individual items or
+     monsters not connected to areas.
+
+I have an idea for a creation, I think...
+     Post on the planners board. It is good for stirring up general opinions,
+     reactions, suggestions. It is also good for discovering if someone is
+     already making something similar. Take a look at the document /doc/world/
+     creation. If you are really unsure if an idea fits into theme, or will be 
+     accepted, or is 'do-able,' ask World for a quick opinion,  and Balance 
+     or QC for the little details.
+
+
+Ok, I definitely have an idea!
+     Get your concept checked out and approved. Take a look at the doc 
+     starting_an_area in /doc/world. Contact World (mail world) to make 
+     sure your idea fits in to theme and to get some opinions and 
+     suggestions about the idea in general. World wants a documentation 
+     file describing your idea, which discusses theme, looks and history.
+     The file /doc/world/World.Concept_guidelines will give the
+     information needed to create that documentation file.
+
+World liked it and I've got a couple of approved ideas. What now?
+     Read all the docs unless you are Mr(s) LPC. Beware of old, outdated docs
+     (use ls -l to see the creation dates). ESPECIALLY read doc/build/style,
+     and /doc/begin/. Use a baseroom! Read the Reference board to see what
+     makes AA special (and USE it!) Take a look at /doc/lfun to learn the
+     local functions that you can use; these are the "vocabulary" of building
+     on AA. Make a few things, and have other wizzes look at them to make 
+     sure you're doing it all correctly. If you are thinking of making a guild, 
+     prepare a complete doc with all your plans, then mail the Balace Arch 
+     (Arpeggio) and have him look at it. LPC-newbies will want to peek in 
+     people's open dirs for helpful docs and examples (also /doc/examples).
+     Greyson has opened the dir of his quest as well (/w/greyson/ruins).
+     The files of Sully's lighthouse area are also open for reading (/w/sully/
+     lighthouse).
+
+Hmm.. I've made a few things, but am I doing it right?
+     Again, show your work around, asking your sponsor and other creators
+     who have gone through the approval process. This is to make sure you 
+     are on the right track. Read /doc/build/balance, and all the files in
+     /doc/balance/ and /d/Balance/open to know what Balance wants from you.
+     The docs in /doc/quality will also describe the sorts of things that
+     Qc looks for, such as explanation of "describe-all", etc.
+
+I'm almost done. I think...
+     Prepare the BALANCE.INFO doc for Balance (as described in 
+     /doc/build/balance). Prepare the WORLD.INFO doc for World.
+
+I'm done!
+     Maybe. Grab a wiz-friend and let them loose in your area, have them report
+     any problems and typos they find. Everything had better clone on the first
+     try!
+
+I'm really done! Trust me.
+
+     Congrats! Mail Qc and tell them you are ready to be Qc'd. Include the
+     path to the start room, the dirs that all relevant obj/npcs are in, and
+     any docs you have made about the area. Mail World to initiate their review
+     process. Mail Balance and ask to be balanced. Visit the clerks in the Qc 
+     and Balance offices (/d/Qc/room/office and /d/Balance/room/office) and 
+     put your project into the approval queue!
+     Be prepared for the approval process to take a while (ask any 22). 
+     Prepare an entrance room file (ask World for guidance.) Don't be
+     surprised if Qc wants you thoroughly balanced before they'll finish 
+     Qc'ing. Finally, after the area is approved, contact Map to get a map 
+     spot and the area implemented and in the game!
+
+first version: Devlin|2.12.93
+first revision: Sully|12.8.95

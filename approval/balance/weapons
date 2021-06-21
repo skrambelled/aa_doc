@@ -1,0 +1,187 @@
+
+-----------------------=> Weapon Guidelines <=-----------------------
+
+What follows is a set of guidelines for the creation of weapons for
+use in the game of Ancient Anguish. Although not by any means strict
+limits, nearly every weapon should fall within the guidelines put 
+forward here.
+
+Weapon Type:
+
+  #include <weapon_lib.h>
+  int set_weapon();
+
+  This function sets the damage types of the weapon and should be set
+  depending on which category of weapon skills the use of the weapon would
+  fall under. Weapon categories are: 
+    longsword, shortsword, axe, curved blade, two-handed sword,
+    two-handed axe, spear, knife, staff, flail, club, rapier,
+    polearm, exotic, markmanship, or unarmed
+
+  Example:
+    set_weapon(LONGSWORD);
+
+Weapon Weight:
+
+  int set_weight();
+
+  The weight of a weapon has an effect on the amount of damage a
+  sucessful hit with the weapon will incur. The weight of a weapon
+  should be set somewhere within the guidlines given for its weapon
+  type as shown in the table below, the exact number depending on 
+  the specific weapon description. The weight is also generically
+  based on its difficulty. Usually difficulty/5+1 weight.
+
+  Example:
+    set_weight(2);
+
+Weapon Difficulty:
+
+  int set_difficulty(); OR
+  int set_class(); 
+
+  Each weapon has a difficulty of use associated with it. Some weapon types
+  are inherently more difficult to use than others. A range of difficulty
+  values for each weapon type are shown in the table below, the specific 
+  difficulty depending on the weapon description and how much damage the
+  weapon does. The difficulty should be roughly equal to double the average
+  damage the weapon does minus 1.
+
+  NOTE: set_class() sets the difficulty of the weapon AND the damage, so if
+        you use set_class(), you do not need to call set_damage().
+        In general set_class is depreciated so is usually only used in old
+        weapons.
+
+  Example:
+    set_difficulty(10);
+
+Weapon Damage:
+
+  mixed set_damage();
+  int set_damage_bonus();
+
+  Each weapon does an range of damage, the average amount of damage of
+  which should be roughly equal to the weapons difficulty +1 divided by 2.
+  Weapons that average damage 10 or above should be extremely rare and
+  unique. The weapon damage defaults to the difficulty class of the
+  weapon if set_class was used.
+ 
+  Example:
+    set_damage(15); would cause the weapon to do 1-15 damage, averaging 7.5.
+    set_damage("d4+8"); would cause the weapon to do 9-13 damage, averaging 11.
+    this would be equivalent to set_damage(4); set_damage_bonus(8);
+
+  NOTE: It is the average damage the weapon does that is important. The range 
+        of damage will determine how reliable the weapon is on any one swing. 
+        If not explicitly set by set_damage(), the damage will be set auto-
+        matically to the recommended value.  Thus a difficulty 5 weapon
+        would automatically have Avg damage of 3. When using set_damage() 
+        to set the damage value different from the recommended value, you 
+        should stay relatively close to the recommended value, as an increase 
+        to damage without an increase to difficulty is a big bonus to those 
+        using the weapon.
+
+Weapon Parry:
+
+  int set_parry_ac();  
+
+  Each weapon is different in its ability to be used to parry incoming 
+  attacks. Some weapon types are inherently better for parrying with that
+  others. A range of parry values for each weapon type are shown in the table
+  below, the specific value depending on the weapon description and its
+  difficulty to use. Weapons that have a parry ac of 19 or above should be
+  extremely rare and unique.
+
+  Example:
+    set_parry_ac(12);
+
+   _______________________________________________________________
+   | Weapon Type | Weight Range | Difficulty Range | Parry Range | 
+   |-------------------------------------------------------------|
+   | Longsword   |     3-4      |     10-18        |     8-19    |
+   | Shortsword  |     2-3      |     6-15         |     7-18    |
+   | 2-H Sword   |     4-7      |     14-20        |     4-16    |  
+   | 2-H Axe     |     5-7      |     16-20        |     1-13    |
+   | Axe         |     2-4      |     8-16         |     1-13    | 
+   | Staff  1-H  |     2-4      |     6-10         |     4-16    | 
+   | Staff  2-H  |     5-6      |     10-15        |     5-17    | 
+   | Club  1-H   |     2-4      |     6-14         |     1-10    | 
+   | Club  2-H   |     5-8      |     12-20        |     1-10    |          
+   | Curved Bla. |     2-4      |     6-17         |     6-18    |  
+   | Rapier      |     2-3      |     4-15         |     7-20    |
+   | Polearm     |     3-7      |     12-20        |     1-10    |
+   | Knife       |     1-2      |     4-13         |     4-15    |
+   | Flail       |     2-4      |     7-17         |     3-14    |
+   | Spear  1-H  |     2-3      |     5-15         |     3-13    |
+   | Spear  2-H  |     4-6      |     10-17        |     1-14    |
+   | Markmanship |     1-3      |     6-16         |     1-7     |     
+   _______________________________________________________________
+
+   NOTE: Bear in mind that a high difficulty weapon will need a lot higher 
+         skill in it to be used effectively and will hit a lot less often 
+         that a weapon of moderate or low difficulty. However, on average, 
+         they do hit harder.
+
+Weapon Value:
+
+  int set_value();  
+
+  The value of a weapon is determined by the average damage that it will
+  do on a sucessful hit, its parry ac and how much the average damage differs
+  from half the diffulty of the weapon. 
+
+       Difficulty | Average |             Parry  |   
+         Class    | Damage: | Value         AC   | Value
+      ------------------------------     ----------------
+           20     |   10.5  |  N/A           20  |  N/A
+           19     |   10    |  N/A           19  |  N/A
+           18     |   9.5   |  935           18  |  410
+           17     |   9     |  830           17  |  365 
+           16     |   8.5   |  735           16  |  325
+           15     |   8     |  645           15  |  285
+           14     |   7.5   |  560           14  |  250
+           13     |   7     |  485           13  |  215
+           12     |   6.5   |  410           12  |  185
+           11     |   6     |  345           11  |  155
+           10     |   5.5   |  285           10  |  130
+            9     |   5     |  230            9  |  105
+            8     |   4.5   |  185            8  |   85
+            7     |   4     |  140            7  |   65
+            6     |   3.5   |  105            6  |   50
+            5     |   3     |   75            5  |   35
+            4     |   2.5   |   50            4  |   25
+            3     |   2     |   35            3  |   15
+            2     |   1.5   |   20            2  |   10
+            1     |   1     |   15            1  |    5
+                  |   0.5   |   10            0  |    0
+
+  To obtain the base value of a weapon, add together the values of the 
+  average damage and the parry ac as given in the above tables. 
+  
+  If double the average damage differs from the weapon difficulty +1, the 
+  value must be modified by the percentage difference of 2* average damage 
+  over the difficulty +1. 
+
+  Example:
+
+    A difficulty 8 weapon, parry ac 7 and average damage 5.
+    Value = 285+65 = 350.
+    2*average damage = 10; difficulty +1 = 8 +1 = 9.
+    % Modifier = ((10-9)/9) * 100 = 10%
+    Therefore final value = 350*110/100 = 385.
+
+    A difficulty 17 weapon, parry ac 17, average damage 8.
+    Value = 830+365 = 1195.
+    2*average damage = 16; difficulty +1 = 17 +1 = 18.
+    % Modifier = ((16-18)/18) * 100 = -12.5%
+    Therefore final value = 1195*87.5/100 = 1045.
+
+    This formula may seem a little complex, but if in doubt, Wandus should 
+    be able to provide you with an accurate answer if you 'tell wandus
+    <weaponname>' with the weapon in your inventory
+
+
+  If you have any questions regarding this document, please don't hesitate
+  to ask your nearest Balance team member. Happy coding.
+   
+    The Balance Team.

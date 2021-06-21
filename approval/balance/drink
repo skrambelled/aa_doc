@@ -1,0 +1,104 @@
+===============
+HEALING--DRINKS
+===============
+
+When creating drinks for the game, there are a few things to keep in mind.
+The following information should give you a fairly good rundown on what
+Balance expects for drinks in the game. For definition purposes, there are
+two types of drinks: portable and non-portable. Portable drinks are, of
+course, drinks that a player can put in his inventory and carry around. Non-
+portable drinks are consumed right in the store.
+
+
+=============================================================================
+                      HOW MUCH SHOULD DRINKS WEIGH?
+=============================================================================
+Drinks should always weigh at least one. We will not approve of weight zero
+items.
+
+
+=============================================================================
+                          WHAT IS STRENGTH?
+=============================================================================
+Strength is a number that determines how much a drink will intoxicate or soak
+you. An alcoholic drink will intoxicate you and a soft drink will soak you.
+What a player can drink is determined as follows:
+
+Strength >= 12 and Level < 10  Message: Drink is sputtered
+Strength >=  8 and Level <  5  Message: Drink is thrown-up
+
+This means that:
+Level 1-4 can drink up to and including strength 7.
+Level 5-9 can drink up to and including strength 11.
+Level 10+ can drink any strength drink.
+
+Strength is added directly onto the intoxication variable for alcoholic
+drinks. Two times the strength is added to the soaked variable for non-
+alcoholic drinks. A player is able to drink (level + 3) in strength before
+becoming too drunk to drink. A player is able to drink (level * 8) before
+being too soaked to drink.
+
+NOTE: The strength should always be 1/2 of what the healing of the drink is.
+
+
+=============================================================================
+                          HOW MUCH CAN DRINK HEAL?
+=============================================================================
+Drink should never heal more than 45 hit points.
+
+
+=============================================================================
+                        HOW MUCH SHOULD DRINKS COST?
+=============================================================================
+Drinks should be valued, at a minimum, according to the following formulas:
+
+                    x = # of hps the drink heals.
+ 
+                A) Portable Drink:     3x + (x^2) / 10
+                B) Non-portable Drink: 2x + (x^2) / 10
+
+            Heals  Cost A  Cost B  |  Heals  Cost A  Cost B
+            -----  ------  ------  |  -----  ------  ------
+              1       3       2    |    23    122      99
+              2       6       4    |    24    130     105
+              3      10       7    |    25    138     113
+              4      13      10    |    26    146     120
+              5      18      13    |    27    154     127
+              6      21      15    |    28    162     134
+              7      26      19    |    29    171     142
+              8      30      22    |    30    180     150
+              9      35      26    |    31    189     158
+             10      40      30    |    32    198     166
+             11      45      34    |    33    207     174
+             12      50      38    |    34    217     183
+             13      56      43    |    35    227     192
+             14      62      48    |    36    237     201
+             15      68      53    |    37    247     210
+             16      73      58    |    38    258     220
+             17      80      63    |    39    269     230
+             18      86      68    |    40    280     240
+             19      93      74    |    41    291     250
+             20     100      80    |	42    302     260
+             21     107      86    |    43    313     270
+             22     114      92    |    44    325     281
+                                   |    45    337     292
+
+
+=============================================================================
+                CAN I HAVE SOMEONE THAT SELLS DRINKS?
+=============================================================================
+Balance would like to evenly spread the amount of healing entering the game.
+If, however, your area and that part of the map justifies a drink seller, you
+can discuss accomodations with a balancer prior to submission.
+
+If you are permitted to have a seller, there are a few things to keep in
+mind:
+ - drinks cannot be unlimited. After about 1000 hps worth of drink each
+   reset, the seller should run out of drink.
+ - no more than 150 hps worth of drinks should be sold to a single player
+   each reset.
+ - these numbers are for high level healing. If you have a newbie-level drink
+   seller, the numbers should be adjusted accordingly. Talk to a balancer.
+
+
+The Balance Team.

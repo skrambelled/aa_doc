@@ -1,0 +1,49 @@
+Treasure is defined as anything that a player can obtain in an area.
+Specifically, we are talking about anything NOT found on a monster's corpse.
+This treasure can be obtained by searching rooms, given as a reward for
+doing an action/quest/miniquest, or any other way a creator can design.
+
+The maximum value of all free treasure in a creator-sized area is 600 coins.
+For smaller or larger areas, discuss specific amounts with your balancer.
+Please do not feel that you have to have the maximum amount, as you will have
+to justify the items in your area.
+
+Balance frowns upon a high amount of gold coins found in an area. We prefer
+equipment and other objects, which have weight.
+
+This treasure should not be lying in a room, but hidden with a player
+needing ability checks/requirements to find it.
+
+Other points:
+ - If a player finds something by searching for it, check to be sure the
+   player can carry the item's weight before moving it to the player.
+ - If a player finds something by searching for it, make sure you have a
+   variable in the code that only lets the player find it once a reset. The
+   reverse of that is also sometimes a problem: make sure the item does reset
+   and isn't only obtainable once a reboot.
+ - Make sure any hidden money or items are properly guarded. We will not
+   approve of a room with 1000 gold hidden behind a rug where the player is
+   able to just walk in and find it. In addition, remember if a monster
+   guards it, it will be considered part of that monster's treasure and needs
+   to follow the above guidelines.
+
+
+Should I give my monster gold?
+-----------------------------
+
+When trying to decide what to give your monster, keep this in mind:
+ - gold weighs nothing on a player.
+ - players will become overloaded and need help carrying, therefore
+   encouraging player interaction.
+ - more objects to be sold to other players through shops.
+ - more variety of equipment in the game, which can help with raising skills
+   that need a variety of easy through to difficult weapons, for example.
+
+In addition, before you start giving out gold on every monster, think about
+it. Would a snake really carry gold on his corpse? Would a dragon? If you
+insist on an animal having gold treasure, make him guard a chest or something
+similar. Neither Balance nor World will accept unrealistic rewards.
+
+
+
+The Balance Team.

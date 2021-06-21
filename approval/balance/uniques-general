@@ -1,0 +1,24 @@
+NOTE: Please read /doc/build/unique when coding your unique.
+
+A unique is an object that is so powerful/different that there can be only
+one version at a time.
+
+Uniques are very rare and need to remain that way. However, we would never
+deter anyone from coding a unique as long as that object necessitated being a
+unique. Most objects do not. Also, your area must have a theme which
+justifies the existence of your unique.
+
+Generally, the value of a unique starts at 2000 coins. This means that it has
+to be either on or guarded by a high-level monster whose treasure allows it.
+We prefer uniques to also be part of a puzzle, quest, miniquest, series of
+kills, etc, rather than just killing the one monster.
+
+We occasionally have low-level uniques, these are EXTREMELY rare and very
+difficult to justify. However, if your reasoning allows it and it fits into
+the theme of your area and the game, it could be a possibility.
+
+NOTE: If you would like to have an object as a unique in your area, you MUST
+      discuss this with, and get approval from, the Arch of Balance.
+
+ALSO: Balance will not allow any stat-boosters at present. (Good alternatives
+      may involve the use of add_hook).

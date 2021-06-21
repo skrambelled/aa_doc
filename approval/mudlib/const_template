@@ -1,0 +1,17 @@
+SYNOPSIS
+  1.  List the meaning of the constant
+        a.  to use ONLY one line (limit to less than 75 characters) 
+        b.  it is on the first line after the heading SYNOPSIS
+
+USAGE
+  2. List the .h file that is to be included to use the constant
+
+DESCRIPTION
+  4.  Tell how/where the constant is used.
+
+EXAMPLE
+  5.  Give a nice clear example.  If newer wizards can understand it, 
+      it will help them learn more independently as well. 
+
+SEE ALSO
+  6.  Suggest a couple (typically 2 to 5) related docs to review.

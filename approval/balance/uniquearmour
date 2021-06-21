@@ -1,0 +1,30 @@
+
+
+NOTE: Please read the general document on uniques before reading further.
+ALSO: Does your armour really need to be unique?
+
+
+Unique armours typically have high armour class in one or more locations.
+There are already plenty of these in the game, so we would encourage
+diversity of thought in creating unique armours.
+
+Balance encourages new unique armours to be different to the standard 'really
+good platemail' type of unique. Why not make a unique pair of gloves or
+boots?
+
+Also, you could make use of Tueblo's armour sets to create a nice set of
+armour, but have the pieces on an npc that randomly spawns a different piece
+each time. When put together, it might make a unique armour. See
+/w/tueblo/toolbox/sets/sets.info for details.
+
+Other features of a unique armour could be ability bonuses, however, be
+aware that we have a large amount of magic resistance ability bonus items
+already in the game and we are not likely to encourage any more.
+
+You could also make use of hooks to create interesting combat effects. See
+'man add_hook' for details. Please also check the armour.txt file for
+hook return values and meanings.
+
+The value of unique armours is very high, therefore your monster will need
+to be a high level monster to incorporate this high value in its treasure
+allowance.

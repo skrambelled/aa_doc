@@ -1,0 +1,63 @@
+
+
+Alignment is, of course, how good or evil a monster is. Since the
+introduction of alignment-based class and guilds, balance alignment has
+become much more important.
+
+
+=============================================================================
+                  WHAT DO THE NUMBERS REALLY MEAN?
+=============================================================================
+
+A player's alignment is located behind his/her title. Because wizards will be
+more familiar with adjectives rather than numbers, the following table will
+help you understand alignment.
+
+      Saintly:  Over 1000       Demonic:  Under -1000
+      Good:    200 to 999       Evil:    -200 to -999
+      Nice:     40 to 199       Nasty:    -40 to -199
+                    Neutral 39 to -39
+
+
+NOTE: Highest alignment is +1000
+      Lowest alignment is -1000
+      In exceptional circumstances, you could have +-1100.
+ALSO: We suggest you talk to a balancer prior to setting the highest or
+      lowest alignments. This has to be justified.
+
+
+=============================================================================
+                WHAT ALIGNMENT SHOULD I MAKE MY MONSTER?
+=============================================================================
+
+Alignment must make sense with the theme of the game. You will have a hard
+time convincing Balance and World to approve your area of saintly
+necromancers or evil priest of Antana.
+
+In general, animals should be neutral. Npcs can be +- 50 alignment per level.
+Depending on the race/class/theme of the npcs and the area.
+ e.g. A trainee priest of Antana
+      Level 9
+      Alignment 450 (maximum)
+ e.g. A necromancer
+      Level 19
+      Alignment -1000 (maximum)
+
+
+=============================================================================
+                   WHAT ABOUT ALIGNMENT AS A REWARD?
+=============================================================================
+It has recently been more common to hear requests for giving alignment as a
+reward for an area-quest. For example, one wizard proposed having an area
+quest with two different endings: to save a race or obliterate it. When the
+quest ended, the player would get an alignment boost based on his choices.
+
+This is a great idea. One thing to keep in mind, though, is the advantage
+this would be for necros and paladins. It is quite difficult to get alignment
+over a certain point. If we started giving rewards of say +/- 300 for a
+quest, this would start to create exceptionally powerful necros and paladins.
+We suggest you add a check to ensure alignments don't exceed +/- 1200 when
+giving alignment as a reward.
+
+
+The Balance Team.

@@ -1,0 +1,70 @@
+Final Approval Checklist                            Feb 23 1998 Bytre
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Most of the things checked for in final approval should be a thorough
+coverage (wait, I'm trying to change.. ok, a spot check) of those
+covered in the Alpha and Bravo checklists.  Final approval should only
+be given after Balance approval has been given.  If the area is ready
+for QC approval, Balance should be mailed to inform them that it is
+waiting on Balance for final QC approval.  Above and beyond that, the
+following final approval tasks must be completed:
+
+-- An exploration flag should be added.  It should be named in the
+   convention of (coder_project), such as bytre_wedshop.  Very minor
+   additions to existing projects don't need exploration points added,
+   but most standalone projects should, as should complex additions.
+   For a very large and complex area, it is possible to have two
+   exploration flags.  Exploration flags should be accessible to all - a
+   guild should have the exploration flag somewhere in a publicly
+   accessible area and shouldn't require the player to join it.  An
+   exploration flag in a quest area should NOT be part of the quest
+   solution.  It is OK to have an exploration flag given as the solve of
+   a mini-quest, but it doesn't have to be there.  Add the flag in
+   /secure/exploration, and test it.
+
+-- Add a hint to Gaius, in /w/bytre/sage/hints.dat.  The format is:
+   exploration flag #:Text of the hint:comment (coder's project name).
+   You can solicit coder feedback for this.  It should be vague enough
+   to be a challenge, but not so vague the player will never figure it
+   out.
+
+-- If the area is a quest, add it to the quest room in /room/quest_room.
+   The value of the quest has pretty much fallen to QC to assign,
+   although it may be appropriate to get Balance to assume this
+   responsibility (or consult with them on it).  Bytre will generally
+   ask the coder what they feel it should be worth, and compare it with
+   the other quests.  He has completed or QCed all of the quests, so he
+   has a good idea of where the value should fall.
+
+-- Verify with World that the location in the query_x_coord and
+   query_y_coord is accurate.
+
+-- Inform necessary parties of the final approval.  Map should be
+   mailed, guildmasters should be mailed if it is an addition to their
+   guild (even if they are inactive, put some mail in their box), the
+   original coder (in the case of an enhancement or rewrite or fix),
+   and, of course, the coder.  The QC Arch should also be included in
+   this mail.  If it is a mudlib project, it should be handed off to
+   Mudlib and mudlib informed.
+
+-- Implement the project.  This should only be done when the coder is
+   present and will be around for a few hours to do any debugging or
+   repair after implementation, which occasionally is needed.  If it is
+   an enhancement or fix to an existing area, it is preferred to let the
+   original owner of the area implement the fix, but this is not always
+   practical.  If the area needs to be hooked up on the map, the Map
+   Arch should be contacted to do the job.
+
+-- Promotion of a Creator.  This is a duty which the QC Arch should
+   perform, preferably when the Wizard's Sponsor is present.  The
+   exception to this is when the Sponsor is a member of the Senate,
+   Bytre likes to allow the Sponsor to do the promotion if practical.
+
+-- Add an entry about the new area to /doc/helpdir/newstuff
+
+-- If the wizard is promoted to creator, update "help credits" (/w/zor/adm/credits/
+   rm the credits file in the dir, patch control do_the_list, cp credits to helpdir)
+-- Ensure that the coder adds the project to the map book.
+
+-- Whatever other tasks are needed to be done.
+

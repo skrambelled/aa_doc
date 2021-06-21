@@ -1,0 +1,19 @@
+
+
+NOTE: Please read the general document on uniques before reading further.
+ALSO: Does your weapon really need to be unique?
+
+
+Unique weapons typically have a higher weapon class and/or parry than the
+ranges specified for that type of weapon in the balance weapons document.
+
+Balance encourages new unique weapons to be different to the standard 'really
+good sword' type of unique. Why not have unique abilities, class-specific
+bonuses, race-specific bonuses, or interesting combat effects using hooks?
+What about a weapon that gives bonuses other than ones that help directly in
+combat? Or, you could create a 'hand-and-a-half' weapon (see man
+hand_and_half).
+
+Bear in mind that unique weapons will be really expensive (value starts at
+2000 coins), so only high-level monsters will be able to hold/guard unique
+weapons.

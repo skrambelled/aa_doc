@@ -1,0 +1,28 @@
+// --------------------------------------------------------------- PREPROCESSOR
+#includes
+- <> for system headers (in /sys), "" for others
+#defines
+- should be in UPPER_CASE
+
+// ------------------------------------------------------------------- INHERITS
+inherits
+- no leading / on paths
+
+// ---------------------------------------------------------- PUBLIC PROTOTYPES
+all routines that other objects might want to call should be prototyped here
+
+// --------------------------------------------------------- PRIVATE PROTOTYPES
+all routines used internally should be prototyped here
+
+// -------------------------------------------------------- EXTERNAL PROTOTYPES
+all routines from other objects inherited by the object that inherits
+this object should be prototyped here
+
+// ------------------------------------------------------------------ VARIABLES
+all global variables should be declared here
+
+// ------------------------------------------------------------- IMPLEMENTATION
+code here
+
+// ------------------------------------------------------------------------ EOF
+last line should be the EOF comment

@@ -1,0 +1,350 @@
+=============================================================================
+ A N C I E N T   A N G U I S H   M U D L I B   C O D I N G   S T A N D A R D
+=============================================================================
+
+ 0 Introduction
+ 1 Documentation
+ 2 Directory Organisation
+ 3 Modularity 
+ 4 File Extensions
+ 5 Header Files
+ 6 File Format
+ 7 Preprocessor and Constants
+ 8 Variables
+ 9 Functions
+10 General
+
+------------------------------------------------------------------------------
+0 Introduction
+------------------------------------------------------------------------------
+This document describes the coding standards for mudlib submissions. While the
+current mudlib does not entirely conform to these standards, new submissions
+are expected to. Existing code will (eventually) be changed to meet these 
+standards. The purpose is to improve:
+- Flexiblity
+- Version Control
+- Readability
+- Documentation
+- Maintainability
+
+There are exceptions to all of these rules given the right reasons. This is a 
+_guideline_ only. Only common exceptions are listed, there are bound to be
+others.
+
+Comments on this document should be mailed to "mudlib". Suggestions for 
+improvement are especially sought.  
+
+This is not meant to be a coding tutorial.
+
+This document is not for use outside of Ancient Anguish.
+
+------------------------------------------------------------------------------
+1 Documentation
+------------------------------------------------------------------------------
+
+1.1
+Functions which are to be used by normal coding wizards will have a man page in
+/doc/lfun. These will follow a set format for which there is a template in
+this directory. Other man pages may also need to be updated to refer to the new 
+man page.
+
+Rationale: This allows quick reference to check the parameters, or usage.
+
+1.2
+Groups of related functions will have a man page in /doc/build/.
+
+Rationale: This allows a wizard to get an overview of the features.
+
+1.3
+The code must be commented. This especially includes reuse instructions, 
+algorithms, any "clever" bits, or anything that is non-obvious to someone
+new to the code.
+
+------------------------------------------------------------------------------
+2 Directory Organisation
+------------------------------------------------------------------------------
+
+2.1
+Files will be put in directories according to the related doc in this directory
+which hasn't been written yet. 
+
+Rationale: This is to make it easier to find specific functions. It also makes 
+  security less error-prone.
+
+2.2
+Do not name a file the same name as an LPC reserved word.
+
+Example: object.c is a bad name for a file.
+
+Rationale: This means that the <filename>::<funcname> syntax does not compile.
+
+------------------------------------------------------------------------------
+3 Modularity 
+------------------------------------------------------------------------------
+
+3.1 
+Standard mudlib inheritables (ie, things in /obj/ and /room/room) should be
+nearly entirely made up of inherited files. The files in /obj/ will contain
+inherit statements, and a few other very specific functions, as well as 
+functions which resolve the order which calls to multiply inherited functions
+are called.
+
+This means that all related functions to new features of these files will be 
+located in files of their own. This includes driver called functions such as
+reset, create and init.
+
+Example: /lib/living/body_position.c handles all the body position functions
+  and contains the variable for the current body position.
+
+Rationale: This improves ease of flexiblity, readability and version control.
+  Flexibility is improved because the behaviour which is coded into the file
+  can easily be inherited into different objects if this is desired.
+  Readability is improved because the files are smaller, and related functions
+  are collected together in a single file. 
+  Version control is easier because multiple parts of large files, such as 
+  player.c or room.c can be modified independently.
+  This also reduces the number interconnectivity of different parts of the 
+  mudlib, making it easier to maintain, debug and modify.
+
+------------------------------------------------------------------------------
+4 File Extensions
+------------------------------------------------------------------------------
+
+4.1
+The majority of this document covers .c files.  All code will be in .c files. 
+
+4.2
+Header files (*.h) may contain preprocessor directives, function prototypes,
+and comments.
+
+------------------------------------------------------------------------------
+5 Header Files
+------------------------------------------------------------------------------
+
+5.1
+Header files will contain only pre-processor directives, (lines that start with
+#), function prototypes and comments. NEVER do things like inherit.
+
+Rationale: This makes the constants and prototypes shareable between multiple
+  .c files, without forcing users the inherit something, or include any other
+  code. Functions in inherited files can be overridden. Were functions allowed
+  to be included in .h files, they could not be overridden.
+
+5.2
+Header files will protect against multiple includes by using #ifndef. 
+
+Example: foo.h
+ 
+  #ifndef FOO_H
+  #define FOO_H
+  // Rest of header file in here.
+  #endif
+
+Rationale: This stops things bugging pointlessly if the file is somehow
+  included more than once.
+
+------------------------------------------------------------------------------
+6 File Format
+------------------------------------------------------------------------------
+
+6.1
+The file will be divided into the following sections, some of which may be
+empty. Indicate the start of each section with a comment. If the section is
+empty there is no need to make a comment for it.
+
+* File header comment: This includes a brief (2-3 line) description of what is
+  in the file.
+* #include, and #pragma's. (This will include strict_types)
+* inherits
+* External Prototypes
+* Internal Prototypes
+* Variables
+* Functions (create, reset and init go first)
+* End Of File comment. (This is nice when printing out multiple files)
+
+Rationale: This is to make it easier to find things in files.
+
+6.2
+Code will be indented consistently.
+
+Rationale: It is easier to read.
+
+6.3
+Anyone using tabs will be shot at dawn.
+
+Rationale: Tab widths are displayed differently on different editors. If you
+  do use an editor and want to use tabs, search and replace them with spaces
+  when you are finished. If the tabs do not display correctly the indentation
+  code by very wrong. Tabs also make the line length inconsistant between
+  editors.
+
+6.4
+Maximum line length is 79 characters.
+
+Rationale: This will be display on everyones terminal ok. Lines longer than 79
+  characters may wrap and be difficult to read.
+
+------------------------------------------------------------------------------
+7 Preprocessor and Constants
+------------------------------------------------------------------------------
+
+7.1
+Strict types must be used.
+
+Rationale: This enforces more readable code. All functions will have datatypes
+  and some logic errors to be found if the datatype is incorrect.
+
+7.2 
+Contants (ie, a #define) should be used whenever a configurable value is to be 
+used. When external users may wish to use these constants, then a .h file will 
+be put in /sys/, or the constants added to an existing .h file.
+
+Rationale: This reduces the effort required to update constants.
+
+7.3
+The only integers to be used in code should be 0 and 1, others should have 
+constants.
+
+Rationale: Constants improve the readability of code by providing more meaning.
+  Contants make updating code easier, because it is easier to change the 
+  constant than finding all the copies in the source.
+
+Example: See header files in /sys/
+
+7.4
+Paths to specific files should be constants.
+
+Rationale: This makes updating code if these file paths change easy.
+
+7.5
+Literal mappings and arrays should be constants if they are used more than 
+once. This includes if they are used by more than one file, or by the same
+file multiple times. Constants can still be used if the literal mapping or
+array is only used once. Note that each use of the constant still creates a
+new mapping/array in memory.
+
+Rationale: This makes changing these constants easy, and makes the code neater.
+
+Exception: In a daemon object it is ok to have a global mapping or array. This
+  saves recreating the mapping/array everytime it is accessed.
+  Consider reading a configuration file in to initalise the mapping or array
+  if you do this.
+
+------------------------------------------------------------------------------
+8 Variables
+------------------------------------------------------------------------------
+
+8.1
+Variables will be private, unless this causes backwards compatibility problems.
+Variables will have query_ and set_ functions, and add_ functions where 
+appropriate. 
+
+Rationale: This is to ensure that the query and set functions are used to 
+  change the values of the variable.  This allows the internal representation
+  to be changed at will by mudlib.  It also allows extra processing to be
+  done, if necessary, in the query and set functions.
+
+8.2 
+Variables should also be made 'static' unless they are specifically need to be
+saved. 
+
+Rationale: This is to reduce the size of player files, and other saved files.
+
+8.3
+All global variables must have verbose names.
+
+Rationale: This makes code more readable. It also makes editing save files 
+  easier, and reduces the chance of bugs due to clashing variable names. 
+
+8.4
+Array and Mapping variables will be set to ({}) and ([]) respectivly in create.
+(Create isn't the only place you can do this.) The set function, and other 
+manipulation of the variable will not allow these variables to be set to 0. 
+
+Rationale: This makes the code cleaner by avoiding many checks for the variable
+  being null.
+
+Exception: If ({}) and 0 have different meanings, or ([]) and 0 have different
+  meanings then this rule can be ignored.
+
+------------------------------------------------------------------------------
+9 Functions
+------------------------------------------------------------------------------
+
+9.1
+Functions will be made private where they do not need to be called from outside
+of the file. 
+
+Rationale: This stops people calling these functions, making future changes 
+  easier to make. You can be sure that no-one is calling private functions, so 
+  backwards compatibility is easier.
+
+9.2
+Functions that should be used by coding wizards will be made public.
+
+Rationale: This makes it more obvious which functions are to be used by
+  coding wizards. Sometimes it will be necessary to have non-private functions 
+  which should only be called by other parts of the mudlib. These will not be 
+  marked as public.
+
+9.3
+Functions that should not be called from outside of this_object() will be made
+static.
+
+Rationale: This enforces that they will not be called incorrectly, and reduces
+  interdependability of the mudlib.
+
+9.4
+Functions which are called from add_action should be named: do_<verb>. If 
+multiple verbs exist, pick one. Do not name other functions do_*
+
+Rationale: This convention makes it easier to see which functions are the 
+  target of add_actions and which ones are not. It makes searching for the
+  location of functions easier, as "do_verb" is usually quite distinct, and
+  just "verb" is not.
+
+------------------------------------------------------------------------------
+10 General and Miscellaneous
+------------------------------------------------------------------------------
+
+10.1
+Make code as readable as possible. The mudlib is meant to be understandable to
+average wizards. It is also meant to set a good coding example. It isn't meant
+to show how clever you are.
+
+10.2
+Avoid assuming the value of this_player() is what the caller of your function
+wants. It is a good idea to provide a varargs function to allow this_player() 
+for most cases, or for it to be specified where necessary. The only time to 
+assume this_player() is in a function called as the result of an add_action.
+
+Rationale: This allows more flexiblity. People can use the function as the 
+  result of something that was tripped off by another player.
+
+10.3
+Allow query functions to see if an action can be performed, as well as having
+the function to perform the action.
+
+10.4
+Do not access variables that you didn't declare yourself. The names and formats
+of variables may be changed by mudlib. This rule is a result of the mudlib
+incorrectly not having private variables.
+
+10.5
+Avoid calling functions multiple times in loops unnecessarily. The most common
+example of this is calling sizeof() in a for loop.
+
+10.6
+Do not copy code, there is a better way by using either inheritence or 
+call-other to a daemon style object.
+
+Rationale: The copied code has to be maintained twice, compiled twice, and 
+  stored in memory twice.
+
+10.7
+Do not store exactly the same variables in multiple clones of an object. 
+Instead create a daemon object to handle common data.
+
+Rationale: Memory efficiency. 
+
+=EOF==========================================================================

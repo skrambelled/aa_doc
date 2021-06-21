@@ -1,0 +1,68 @@
+Armour tables
+-------------
+
+
+  NOTE: AC is put in the next table as a GUIDE. See the armour document for
+        details.
+
+        AC  Description                        <armour_lib.h> define
+        --------------------------------------------------------------  
+  For head/hbody/legs/arms:
+         1  Thin Cloth or Scraggly Fur         THIN_CLOTH
+         2  Thick Cloth or Normal Fur          THICK_CLOTH
+         3  Padded Cloth or Well-Made Fur      PADDED
+         4  Soft Leather or Fine Fur           SOFT_LEATHER
+         5  Leather                            LEATHER
+         6  Reinforced Leather                 REINFRCD_LEATHER
+         7  Studded Leather                    STUDDED_LEATHER
+         8  Ringmail                           RINGMAIL
+         9  Scalemail                          SCALEMAIL
+        10  Chainmail                          CHAINMAIL
+        11  Splintmail                         SPLINTMAIL
+        12  Bandedmail                         BANDEDMAIL
+        13  Platemail                          PLATEMAIL 
+        14  Magical 
+        15  Magical 
+
+  For neck/hands/feet
+        1   Cloth                              THIN_CLOTH  
+        2   Thick Cloth or Fur                 THICK_CLOTH / PADDED /
+                                               SOFT_LEATHER
+        3   Leather or Studded Leather         LEATHER / REINFRCD_LEATHER /
+                                               STUDDED_LEATHER 
+        4   Metal                              RINGMAIL / CHAINMAIL / 
+                                               SCALEMAIL / SPLINTMAIL /
+                                               BANDEDMAIL / PLATEMAIL 
+        5   Magical 
+
+  For light body
+        1   Cloth or Scraggly Fur              THIN_CLOTH
+        2   Thick Cloth or Regular Fur         THICK_CLOTH
+        3   Padded Cloth or Well-Made Fur      PADDED / SOFT_LEATHER
+        4   Leather or Fine Fur                LEATHER   
+        5   Magical 
+
+
+
+  Define            Protection (best to worst)
+  --------------------------------------------
+  THIN_CLOTH        slash, pierce, chop, crush
+  THICK_CLOTH       slash, chop, pierce, crush
+  PADDED            pierce, slash, crush, chop
+  SOFT_LEATHER      slash, pierce, chop, crush
+  LEATHER           slash, chop, pierce, crush
+  REINFRCD_LEATHER  slash, pierce, chop, crush
+  STUDDED_LEATHER   slash, chop/pierce, crush
+  RINGMAIL          slash, chop/pierce, crush
+  SCALEMAIL         slash, crush, chop, pierce
+  CHAINMAIL         slash, chop, pierce, crush
+  SPLINTMAIL        crush, chop, slash, pierce
+  BANDEDMAIL        slash, crush, chop, pierce
+  PLATEMAIL         crush, slash/chop, pierce
+
+  (for specific values, see /sys/armour_lib.h)
+
+
+
+  Weight = (total acs of 1-15 ac areas / 6) + (total acs of 1-5 ac areas / 4)
+           + (number of areas covered over 1) + 1.

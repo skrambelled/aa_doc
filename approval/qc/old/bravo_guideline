@@ -1,0 +1,321 @@
+                        Adinos' Bravo QC checklist
+                     ================================
+
+Below is a list of the stuff that I will in particular look for when
+checking an area.  I will also try to find anything that should have
+been handled at the Alpha level, but that is not listed below - this
+list only deals with Bravo concerns.
+
+
+                             General notes
+                          ===================
+
+The hat: The area should check out without major problems, when checked
+    by the hat.  If it does not, I will return it immediately, with just
+    a brief comment ... "Fix it!".
+
+Avoid boredom:  Coding a set of boring rooms is just about the worst
+    offense possible.  Ideally, all rooms should allow you to do
+    something other than just look at items and exit through the possible
+    exits.  Now, even if only some rooms allow you some "special" actions,
+    they should be as varied and natural as possible.  The primary goal
+    is after all to code something that is FUN!  
+
+Duplication of code: This is to be avoided.  If identical (or almost
+    identical) code appears in multiple rooms/items/monsters, it is an
+    indication that a baseroom/item/monster should have been coded and
+    inherited by the different rooms/items/monsters.  Duplicated code
+    can also indicate abuse of the cut-n-paste feature - meaning that
+    the rooms/items/monsters are too similar.
+
+About inheritance: Often the inheritance structure of areas is like this:
+
+                          baseroom
+                             |
+                 ------------------------- ...
+                 |       |       |       |  
+               room1   room2   room3   room4
+
+    That is, all the rooms inherit a single baseroom, which handles
+    everything that is in common to the entire area.   However, that
+    is sometimes only the (X,Y) coordinate information.
+
+    It may be more sensible to construct the inheritance like this:
+
+                        area_baseroom
+                              |
+            ------------------------------------------...
+            |              |             |           |
+          area1          area2         area3        room
+            |              |             |
+      -------------  ------------- ------------- 
+      |   |   |   |  |   |   |   | |   |   |   |
+
+    That is, there is one baseroom for the entire area, defining things
+    like the (X,Y) coordinates.  Then rooms are grouped together in a
+    logical way ("village", "underground", "in the forest"...) so that
+    each group has sufficient code in common to justify creating a 
+    special baseroom for the group.  For example, a forest room may
+    inherit forest_base.c, which in turn inherits area_base.c, which
+    finally inherits /room/room.
+
+    The forest baseroom would include various add_item(), add_sound(),
+    add_noget() etc. calls that are in common to the entire forest.
+
+When moving items to players: Unless the item is weightless, an 
+    add_weight check is necessary, and preferably it should use
+    ob->query_weight(), instead of hard-coding the weight.  If the 
+    player cannot carry the object, and leaving it on the ground is
+    considered appropriate, remember to destruct the object - otherwise
+    it will be handing around without an environment, of no use to 
+    anybody.
+
+Avoid unnecessary variables.  For example, 
+
+        stuff = clone_object("/w/testwiz/area/obj/stuff.c");
+        stuff->move(this_object());
+
+     if 'stuff' is not used elsewhere, this can be coded as
+
+        clone_object("/w/testwiz/area/obj/stuff.c")->move(this_object());
+
+Write/Writef: You should never use writef() for short strings - if the
+    string fits on one line, calling writef is a CPU waste.  On the other
+    hand, a long message (3 lines or more) should not contain \n for
+    wrapping and use write() - in that case, calling writef() is better.
+    Also remember that a writef() does not need a \n at the end.  The
+    same comments apply to say/sayf.
+
+notify_fail() should be used when appropriate.  Just remember to follow
+    it with a "return 0".  On some other muds you can do
+
+        return notify_fail(".....");
+
+    Sorry, that doesn't work here.  Also be careful with the following:
+
+    If the same function handles multiple verbs, you should use 
+    query_verb() in the call to notify_fail.
+
+    Otherwise players might see something like this (assuming the command
+    is supposed to allow both 'toss' and 'throw'):
+
+        > toss ............
+        Throw what across what ?
+
+    This looks just silly.
+
+Syntax variations: If a particular command/situation is of critical
+    importance, for example if a puzzle cannot be solved without it, you
+    have to pay special attention to handling as many variations of the
+    command as possible. For example, instead of allowing only
+ 
+        "insert gem into socket"
+
+    You should handle variations like:
+
+        "put gem into eye socket"
+        "insert gem in eye"
+        "insert gem into the right eye socket of the statue of Guiweyu"
+
+    (well, OK....perhaps not the last one - but you should get the point)
+
+Use of message(): It may be neater to replace set of lines like the 
+    following with a single call to message().
+
+        write("You try to climb one of the stone columns, but fail.\n");
+        say(TPN+" tries to climb one of the stone columns, but fails.\n");
+
+    Beware, however, that message is unsuitable, when there are 3 parties
+    involved, that is a player doing something to another player.  Other
+    bystanders should probably get a different message than either of the
+    two parties involved.
+
+Pueblo stuff: Signs and such need it - man preformat and query_asciiart for details.
+
+Exploration points: There should be one exploration point per area.
+    Determining where it goes is not the task of Bravo, but the QC Arch,
+    but Bravo should remind the coder to think about where to place it.
+
+Absurd ?  If something is just totally wacky, it will not be accepted,
+    even if a lame attempt is made to explain it away as "magic".
+
+
+                            Player stuff
+                         ==================
+
+Follow the leader: It is reasonable for people following other persons to
+    attempt to follow them everywhere...that means climbing trees and using
+    other non-standard exits.  In other words, if a leader is moved
+    somewhere with move_player() it is usually reasonable to have the
+    followers attempt to duplicate that action...note that they do not
+    necessarily have to succeed.
+
+    And yes...when using move_player, remember to check the body position.
+    (do "man body_positions") Kneeling, climbing a tree, and then
+    discovering that you are still kneeling is kind of silly.   
+
+Guards and such: If you use the base guard, you don't have to worry about
+    this, but otherwise you have to add code to handle hidden rogues 
+    attempting to sneak past the guardian.
+
+Class "abilities": If you have tracks, check if the player is a ranger,
+    and if so, give them more information than other players get - such 
+    as how old the tracks are, and what animal made them.  Likewise, a
+    saintly paladin might have a better chance of recognizing an evil 
+    artifact than others.
+    
+    In other words - try to give each class (race or guild) something
+    "special" to do in your area - and whenever they are doing something 
+    that relates to their special abilities, "reward" them accordingly.
+
+
+                               Rooms
+                            ===========
+
+Ability checks: Are they (in particular climbing and searching) used
+    everywhere they make sense, and are they reasonable, in particular
+    considering the average level of the players likely to visit the 
+    area ?  See the ability_check documents for some thoughts on how to
+    code checks of different difficulty.
+
+    It is also a neat touch to make the success chance depend on more than
+    just the raw ability - it should be more difficult to search in 
+    darkness than in a lit room ... it should be more difficult to swim
+    while wielding a weapon and so on.
+
+Foraging: Rangers should be able to forage in wooded areas and along the
+    seashore - if the short description does not contain any of the 
+    correct keywords, they cannot.  Valid keywords are:
+
+        forest: forest, woods wooded, park, burnham wood
+        jungle: jungle
+        swamp: swamp, marsh
+        shore: shore, beach
+        slope: slope, mount, rocky, hill
+        plains: plain, grass, field, meadow
+        tundra: snow, tundra
+
+Hidden items: If an item is found during search, and then just left there,
+    will it reappear on the next reset ?  It might make sense to have
+    the reset function destroy any "hidden" items, if they are present,
+    but no player is around.
+
+Searching: Some rooms are just an invitation to go searching - libraries
+    for example.  As the "You search around for a while, but don't find
+    anything interesting" is quite boring, you might support the search
+    command, even if nothing is to be found, and display something more
+    interesting.
+
+Normal actions: You should of course use add_item(), add_smell(), 
+    add_touch() and add_noget() for "objects" that are mentioned in the
+    long() description - within reasonable limits. 
+
+    In addition, you should try to anticipate reasonable player actions
+    towards those "objects".  For example if the long() mentions some old
+    barrels, it would be reasonable to expect players to "smash barrel(s)",
+    "search barrel(s)" and so on.  The easiest way to handle this is usually
+    just to use the add_message() function.
+
+    If you have chairs or couches, allow sitting on them...if you have
+    beds allow lying in them (and set the body_position accordingly).
+    Using block_stand_messages() (and other similar functions) is the
+    easiest way to do this.
+
+    If you have altars, allow praying - if you have meditation chambers,
+    allow meditation....if you have trees, allow climbing, in other words,
+    anticipate all the "reasonable" actions players might perform in 
+    the room and handle them properly.  
+
+Light sources: If you have lamps, torches, candles etc.. in the room, it is
+    neat allowing the players to light and extinguish them, possibly making
+    a dark room lit and vice versa.
+
+Fishing:  If you have lakes, rivers or ponds, you should allow fishing in
+    them.
+
+Singular/Plural add_item(): Be careful when using the same add_item for both
+    singular and plural words - in particular no not start the description
+    with "it" or "they".
+
+Outdoorness: Use W_COVER, W_FULL and so on instead of the numeric constants -
+    it makes it easier to spot mistakes.  Also, be careful in not assigning
+    a room outdoorness of W_COVER, unless you have real cover there - something
+    protecting you from the rain.
+
+Windows are neat: The add_window() function should be used more.  And
+    windows could for example look into maprooms.
+
+
+                            Monsters/NPCs
+                         ===================
+
+Wandering or randomly/conditionally appearing monsters: What if they are
+    not killed, and just wander out of the creation room.  Will they
+    reappear on reset, producing multiple copies ?  Also make sure they do
+    not wander out of their designated area.
+
+If NPCs engage in some activity like appearing to be smashing a statue,
+    pushing a wagon, allow the players to attempt the same action.
+
+Monster gender: Sometimes it is logical for a monster to be neuter, but
+    it other cases it obviously should be either female or male.  No
+    matter what you do, the long() description should we consistent with
+    the gender - otherwise you get inconsistencies like this:
+
+        Its eyes gleam with red light.
+        He is in good shape.
+ 
+Banishing: You should have remembered to banish the names of all monsters/NPCs
+    in the area.  If a player with the name exists, you should change the
+    name of your monster.
+
+Carry problem: If you have NPCs (in particular unkillable ones) that accept
+    a specific item for a specific purpose, make sure they drop or return
+    other items.  Otherwise somebody could give them so many "junk" items
+    that they might not be able to accept the "important" item.
+
+Monster alignment: This should really be a Balance issue, but well - keep in
+    mind that being really good or evil requires intent and understanding.
+    Non-intelligent animals should typically have neutral alignment (in the
+    [-10,10] range).
+
+Monsters with keywords and emotions: If a specific keyword triggers a story
+    (a drama-like call-out loop), make sure it cannot be re-started in the
+    middle of the story. Also, turning off other keywords while the story is
+    running is generally a good idea.
+
+Unkillable NPCs: In general, some really good reason is needed for an NPC to
+    be unkillable - that is, making it killable would be too annoying or
+    irritating to too many other players.  Before making a NPC unkillable
+    consider whether making it killable would annoy other players too much.
+
+
+                 Items (weapons, armours, treasures)
+              =========================================
+
+Self-destructing objects...if they are not weightless, remember to add 
+   negative weight when they disappear - otherwise players might appear
+   to be carrying a heavy load, when in fact they are holding nothing 
+   at all.
+
+Combinations of weapons/armour: Do not make absurd mistakes like giving
+   a monster a two-handed weapon and a shield.  Players cannot use that
+   combination - monsters should not either.  (well, unless they have
+   more than two hands).
+
+Items should preferably call set_identify(), set_touch() and set_smell().
+   Little details like that make the difference between a mediocre area
+   and one that deserves real praise.
+
+   And yes, make sure the set_identify string does not assume the player
+   cast an identification spell....there might be an "identification
+   service" somewhere one day.
+
+Alternate items: If your area requires an item, like for example an iron bar
+   to perform some action, like moving a rock, alternate items (as in this
+   case, the crowbar from the covenant) should work too....and even a sword,
+   but you might want to have it break, or be damaged.
+
+Communications: If you code an item that allows players to communicate with
+   others, you should maintain a log, so that Law can follow up on
+   harassment reports.

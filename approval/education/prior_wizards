@@ -1,0 +1,13 @@
+Prior wizards are Apprentices who have been:
+  * Demoted to Apprentice for inactivity
+  * Demoted due to their sponsor withdrawing sponsorship
+  * Wizards demoted to mortal by law or at their own request and are returning
+
+These immortals still fall under the category of apprentice (per 'help 
+wizrules'), and should take special care that their mortal alts are 
+suicided or frozen, and their autoloading wizard tools are destructed.  To
+get files moved from old wizard directories, contact the Senate.
+
+SEE ALSO
+  sponsor, sponsor_choosing, sponsoring, sponsor_changing,
+  withdraw_sponsorship

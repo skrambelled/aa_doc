@@ -1,0 +1,178 @@
+----------------------=> Armour Guidelines <=-----------------------
+
+What follows is a set of guidelines for the creation of armours for
+use in the game of Ancient Anguish. Although not by any means strict
+limits, nearly every armour should fall within the guidelines put 
+forward here.
+
+Over the course of development, armour on AA has become something
+different from what it is supposed to be for.  Balance is 
+attempting to correct this problem and bring armour class values 
+and weights back into line.  Below you will find definition of
+what we expect to become the norm for armour.  That is, a 
+piecemeal armour system rather than near-weightless composites.
+This means that instead of armour like fine platemail which covers
+multiple parts of the body in one object, players would have to 
+kill 3-4 monsters to get a chestpiece, sleeves, leggings, and a 
+collar to get the same AC value.  As you create areas, keep in 
+mind that the demand for well-made single piece armours will be 
+on the rise in the near future.
+
+Armour Type:
+
+  string set_armour_type();
+
+  This effectively determines where the armour is worn. If the armour type
+  is set as "armour", as most should, it will take up armour slots as 
+  displayed by the 'eq' command. If the armour is not regular armour like 
+  this, then this variable may be set to other values, usually the type of 
+  item that the object is. These are the common ones that get used:
+  "amulet" denotes that the item is worn around the neck.
+  "ring" denotes that the item is worn on the fingers.
+  "back" denotes that the item is worn on the back.
+  
+Armour Class:
+  
+  int set_armour();
+
+  This sets the average level of protection that the item of armour gives
+  if it is armour type "armour". In general, the class of armour is
+  determined by its predominant material composition and NOT necessarily
+  it's armour class. Depending on what you set here, armour will defend
+  better against certain attack types. For example, SOFT_LEATHER armour
+  protects better against slashing attacks, but does not protect very well
+  against crushing attacks (see the armour_table document for more details).
+
+  NOTE: To do this, '#include <armour_lib.h>' and set_armour(); to the most
+        suitable define for the armour.
+  ALSO: The armour classes are given as a guide ONLY and are not inextricably
+        linked to the description/define.
+        For example, you could code a PLATEMAIL helmet with armour class 3.
+
+  For head/hbody/legs/arms:
+
+        AC  Description                        <armour_lib.h> define
+        --------------------------------------------------------------  
+         1  Thin Cloth or Scraggly Fur         THIN_CLOTH
+         2  Thick Cloth or Normal Fur          THICK_CLOTH
+         3  Padded Cloth or Well-Made Fur      PADDED
+         4  Soft Leather or Fine Fur           SOFT_LEATHER
+         5  Leather                            LEATHER
+         6  Reinforced Leather                 REINFRCD_LEATHER
+         7  Studded Leather                    STUDDED_LEATHER
+         8  Ringmail                           RINGMAIL
+         9  Scalemail                          SCALEMAIL
+        10  Chainmail                          CHAINMAIL
+        11  Splintmail                         SPLINTMAIL
+        12  Bandedmail                         BANDEDMAIL
+        13  Platemail                          PLATEMAIL 
+        14  Magical 
+        15  Magical 
+
+  For neck/hands/feet
+
+        AC  Description                        <armour_lib.h> define
+        --------------------------------------------------------------  
+        1   Cloth                              THIN_CLOTH  
+        2   Thick Cloth or Fur                 THICK_CLOTH / PADDED /
+                                               SOFT_LEATHER
+        3   Leather or Studded Leather         LEATHER / REINFRCD_LEATHER /
+                                               STUDDED_LEATHER 
+        4   Metal                              RINGMAIL / CHAINMAIL / 
+                                               SCALEMAIL / SPLINTMAIL /
+                                               BANDEDMAIL / PLATEMAIL 
+        5   Magical 
+
+  For light body
+
+        AC  Description                        <armour_lib.h> define
+        --------------------------------------------------------------  
+        1   Cloth or Scraggly Fur              THIN_CLOTH
+        2   Thick Cloth or Regular Fur         THICK_CLOTH
+        3   Padded Cloth or Well-Made Fur      PADDED / SOFT_LEATHER
+        4   Leather or Fine Fur                LEATHER   
+        5   Magical 
+ 
+Armour Protection:
+  
+  int set_head_ac();
+  int set_hbody_ac();
+  int set_leg_ac();
+  int set_arm_ac();
+
+  Determines the amount of protection the armour gives to the head, body,
+  legs and arms repsectively. The value should range between 1 and 15, 
+  with 15 being reserved for magical and usually unique items. If you are
+  unsure what level your armour classes should be, the tables above can be
+  used as a guide as to the amount of protection for each type of material.
+
+  int set_neck_ac();
+  int set_lbody_ac();
+  int set_foot_ac();
+  int set_hand_ac();
+
+  Determines the amount of protection the armour gives to the neck, body,
+  feet and hands respectively. The value should range between 1 and 5, 
+  with 5 being reserved for magical and usually unique items. If you are
+  unsure what level your armour classes should be, the tables above can be
+  used as a guide as to the amount of protection for each type of material.
+
+Armour Weight:
+
+  int set_weight();
+
+  The weight a piece of armour should be can be calculated using the 
+  following formula: 
+  
+  Weight = (total acs of 1-15 ac areas / 6) + (total acs of 1-5 ac areas / 4) +
+           (number of areas covered over 1) + 1.
+   
+  For example: 
+    Some platemail with leg ac 13, arm ac 13, hbody ac 13 and neck ac 4
+    Weight = (13+13+13 / 6) + (4 / 4) + (3) + 1 = 11.  
+
+  NOTE: In doing the divisions of these calculations, one should always
+        round down. ie. 11/6 = 1.
+
+Armour Value: 
+
+  To obtain the value of the armour, use either Wandus by telling wandus 
+  <armour_name> whilst holding the armour, or ask a Balance assistant
+  who will be glad to help you.
+
+  For basic piece meal values, check the table below.
+
+Values for Piecemeal Armour
+
+  For Headt/Hbody/Legs/Arms
+
+  AC   Value    AC   Value   Ac    Value
+   1      5      6     50    11     225
+   2      6      7     85    12     250
+   3     12      8    150    13     285
+   4     18      9    180    14     300
+   5     24     10    200    15     350
+
+  For Neck/Hands/Feet
+
+  AC   Value
+   1     25
+   2     50
+   3    125
+   4    250
+   5    350 
+
+  If you have any questions regarding this document, please don't hesitate
+  to ask your nearest Balance team member. Happy coding.
+
+Armour Hooks:
+
+  If you happen to use the hit_player hooks to modify the damage, a reduction
+  of 1 is the equivalent of 3 ac for the damage reduction.
+
+  If you use a hit_mod hook, then a change of 1 is the equivalent of 6 ac
+
+  This should be taken into account when valuing the armour and for the
+  maximum allowed values.
+   
+    The Balance Team.

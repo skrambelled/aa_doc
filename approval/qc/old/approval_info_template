@@ -1,0 +1,82 @@
+============================================================================
+
+           <Insert project name>
+                   by <insert name>                             <insert date>
+                   
+============================================================================
+
+                             ------------
+                             INTRODUCTION
+                             ------------
+
+  <insert short description of project and how to get started with reviewing
+   it>
+
+  <insert locations of important documentation - the world.info and the
+   balance.info especially>
+  
+                                -----
+                                WORLD
+                                -----
+
+  <insert what you think world will find most problematic>
+  <if you haven't yet negotiated with world where your area will go, 
+   insert some options you think are suitable for where the area is to go>
+
+                                -----
+                                ALPHA
+                                -----
+
+  <insert how much work you think this project holds for alpha reviewers.
+   If the project is mostly code based with a few bits of chats and whatnot
+   hiding in one or two specific places, point them to it>
+
+                                -----
+                                BRAVO
+                                -----
+
+  <insert how tough you think the code is for bravo reviewers. Outline where
+   you think the code is mostly likely to go wrong. If the code is quite
+   complex, an explanation of what you're doing and how you're doing it
+   wouldn't go astray>
+
+                                -------
+                                BALANCE
+                                -------
+
+  <usually your concerns with balance go straight inside the balance.info>
+
+                              --------------
+                              IMPLEMENTATION
+                              --------------
+
+  <detail what needs to be done to implement your project - if it's an area,
+   what rooms need to have code added to it? (or add_exits uncommented or
+   #defines changed). If it's a fix to a bug in the game, what files need to 
+   be overwritten? If it's quite a wide ranging project, what else needs to
+   be changed in other code to accomodate this project?)>
+   
+  <If it's a mudlib or contrib project, where is the supporting
+   documentation, where does it go, what are the projects that rely on this
+   project going through?>
+
+  <Finally, indicate what you would like to be put in "help newstuff" 
+   (one-line description) and on the website (one paragraph) when the 
+   project is installed. If you want a special announcement board post
+   (e.g. appearing to be posted by an NPC) rather than posting it 
+   yourself, provide the exact poster name and contents in a separate 
+   file.>
+   
+                               ------------
+                               EXPECTATIONS
+                               ------------
+                             
+  <describe whether this project MUST be done before some time - ie, a
+   Halloween themed project that must be finished before halloween. Detail
+   if you will have big events coming up in your life that will affect
+   how reviewers should treat your project (starting college, going on a
+   long vacation, moving countries, etc). This way, reviewers know if they're
+   working on a deadline and also will know when they don't need to be 
+   looking at your project because you won't be active during that period
+   anyway.>
+   

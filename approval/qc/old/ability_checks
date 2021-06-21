@@ -1,0 +1,130 @@
+
+As a general rule, any climbing, searching or swimming activity requires
+an ability check, but those checks have been used and abused in various
+ways in the past.  The situations requiring an ability check are not all
+equally hard and therefore the ability checks should not all be alike.
+
+The purpose of this documents is to demonstrate different types of
+ability checks, and demonstrate how they can be coded.
+
+Consider the following 6 cases:
+
+1) An difficult situation, where a certain minimum skill is required.
+   Nobody with the ability below that  minimum has any chance
+   whatsoever.  An example might be climbing a slippery, smooth wall, or
+   swim across a rough sea.  Luck just does not enter into it ... if you
+   do not have the minimum skill, you will fail.
+
+   Example:
+
+        if (this_player()->query_ability("climbing") > MINIMUM)
+            ....you succeed
+        else
+            ....you fail...
+
+   However, this is not very realistic.  Even a good climber has a chance
+   of falling when climbing a wet, smooth wall, so let's improve the code:
+
+        if (random(this_player()->query_ability("climbing")) > MINIMUM)
+            ....you succeed
+        else
+            ....you fail...
+
+   Alternatively, one can code something like this:
+
+        if (this_player()->query_ability("climbing")-MINIMUM > random(100))
+            ....you succeed
+        else
+            ....you fail...
+   
+   This is much better.  Anyone with climbing ability below MINIMUM will
+   always fail, but better climbers have a chance ... and the better they
+   are, the better the chance of success.  For game purposes, MINIMUM
+   should be in line with the difficulty level of the area - that is no
+   minimum ability of 50 in a newbie area (the players would always fail),
+   or a minimum ability of 20 in a high-level area (the players would
+   always succeed), unless it is there just to keep the low-level players
+   out.
+
+2) Difficult situation, but anyone has a chance...even if it is small.   
+   An example might be "search haystack" for a needle.  No matter how
+   bad your search ability is, you always have a chance of stumbling
+   across the needle, that is, luck is a factor as well.
+            
+   Example 1:
+            
+        if (this_player()->query_ability("searching") > random(500))
+            ....you succeed
+        else
+            ....you fail...
+            
+   No magical items will ever increase the ability to 500, so nobody will
+   ever make the check automatically, but even a newbie with a search
+   ability of 1 has a 1-in-500 chance of finding the needle in the
+   haystack.
+
+   Example 2:
+
+        ab = this_player()->query_ability("searching");
+        if (ab > random(100) && ab > random(100) && ab > random(100))
+            ....you succeed
+        else
+            ....you fail...
+
+    Here you basically have to make several easier checks in a row.  
+
+3) A "standard" difficulty.  Everyone has a chance of making the check,
+   but if the ability is 100 or higher, you will make the check
+   automatically.
+
+   Example:
+            
+        if (this_player()->query_ability("searching") > random(100))
+            ....you succeed
+        else
+            ....you fail...
+   
+4) A "standard" difficulty.  Everyone has a chance of making the check, but
+   even the most skilled person can fail.
+
+   Example:  
+
+        if (random(this_player()->query_ability("searching")) >random(100))
+            ....you succeed
+        else
+            ....you fail...
+
+5) An easy check, but where even the most skilled person can fail -
+   climbing a dry, cracked, vine-covered wall, under good conditions.
+
+   Example 1:
+   
+        if (this_player()->query_ability("searching")+BONUS > random(100))
+            ....you succeed
+        else
+            ....you fail...
+
+   Example 2:
+        
+        ab = this_player()->query_ability("searching");
+        if (ab > random(100) || ab > random(100) || ab > random(100))
+            ....you succeed
+        else
+            ....you fail...
+
+   In the second example, you basically get several tries, and it is
+   sufficient to make one of them.
+            
+6) An easy check, where anybody with a skill above a certain maximum
+   will always succeed.  An example would be searching for a groups of
+   orcs hiding in a haystack.  There is just no chance that anybody
+   with a search ability of 70 will fail to find the orcs.
+
+   Example:
+   
+        if (this_player()->query_ability("climbing") > random(MAXIMUM)
+            ....you succeed
+        else
+            ....you fail...
+            
+Adinos, June '97

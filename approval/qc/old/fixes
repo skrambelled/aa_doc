@@ -1,0 +1,42 @@
+                   Notes on fixing bugs in installed areas
+                 ===========================================
+
+The typo and bug reports for installed areas are logged to files in your
+log directory, so doing something like
+
+  tail /w/somewiz/log/Typo
+  tail /w/somewiz/log/Bug
+  tail /w/somewiz/log/Praise
+
+(with your own name substituted for 'somewiz', of course), will list the
+most recent reports.  Please fix them.  If you don't fix your typos,
+someone else will have to be given write access to your installed areas
+to fix them, and it is far preferable that the coder him/herself does the
+job.
+
+Now....
+
+1) If you are just fixing a simple typo, just make the correction,
+   and don't bother notifying QC or Balance.  You *should* however
+   make sure you don't screw anything up, for example editing the
+   file incorrectly, so it doesn't load.
+
+2) If you are fixing an "obvious" bug, like adding a missing call to
+   check_body_position() so players don't climb a tree while lying 
+   down, you can go ahead and make the change, but document it in a  
+   file named CHANGES or something like that.  If you are not sure if
+   problem being fixed is in the "obvious bug" category, talk to
+   someone in QC first.
+
+3) If you are fixing a bug that does not really affect gameplay, but
+   is not obvious either, you should let the QC or Balance Arch look
+   at the change before it is implemented - make the change to a copy of
+   the original file.
+
+4) If the change is complicated, large or affects game play in any way
+   (monster, armour or weapon stats), you MUST submit the fix as a
+   project.  When submitting a fix, include the following information:
+
+       name of original file(s)
+       name of changed file(s)
+       nature of the problem, and a description of the fix.

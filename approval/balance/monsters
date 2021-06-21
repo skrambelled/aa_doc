@@ -1,0 +1,38 @@
+** How many monsters can I have in my area? **:
+==============================================
+
+Monsters should occur in areas at a ratio of EITHER 2.25 rooms per monster,
+OR 70 healthpoints per room.
+
+The 70 health points per room ratio is a fairly new concept to replace the
+old 2 rooms to one monster ratio for newbie areas. It also allows more npcs
+in the majority of mid-level areas.
+
+For example, in a 21-room (creator size) area, you can have a maximum of 1470
+health points. For a newbie area, this would mean that you could have 21
+level one monsters OR 18 level 2 npcs OR three level 5 monsters, two level 4
+monsters, four level 3 monsters, two level 2 monsters, and six level 1
+monsters. If you used the 2.25:1 rule, the maximum number of monsters in the
+area is nine.
+
+NOTE: Please read the monster_table document.
+
+
+** Miscellaneous **:
+===================
+
+ If your monster drops/returns/destructs objects when given by a player, be
+sure to remove/add the weight of the object. Otherwise, you could end up with
+abusable/annoying weight bugs.
+
+  Another hint: set_level() will automatically set the minimum values of the
+following: wc, any ac, hp, stats, skills, parrying, blocking, resistances,
+experience. Note that we are unlikely to pass an npc with LOWER values than
+the minimum, unless there is a reason and something to counterbalance the
+lower value.
+
+For more information, see the high-level monster, unkillable monster, undead
+and alignment documents in this directory.
+
+
+The Balance Team.

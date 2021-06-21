@@ -1,0 +1,75 @@
+** Epic Monsters **:
+====================
+
+An "epic" monster is one of level 20 to 25. Epic monsters are the most
+difficult monsters in the game. The solo player does not stand a chance,
+as it will be a challenge for a party of experienced players to kill an
+epic monster. For those that do manage to kill an epic monster, the
+bragging rights are almost as valuable as the experience and treasure.
+
+There must be a logical and thematic reason why your monster is so
+powerful.
+
+Epic monsters MUST be a challenge for a party of experienced players.
+Minimum standards are given at the end of this document, but your epic
+monster will be extensively tested to make sure that it provides enough
+of a challenge. Things to watch out for include: smites from saintly
+paladins against negative-aligned monsters, the cleric destruct prayer
+against undead, and the lightning spell of mages when outdoors.
+
+On the subject of challenge, do not not simply make your epic monster
+do a lot of spell or weapon damage. This is extremely boring and will
+simply result in players drinking millions of potions, which takes no
+skill at all. Suggestions for other forms of challenge include: self-
+healing, tripping, disarming, using thrown weapons or bows, elemental
+damage, and spells that have an effect over more than one combat round.
+
+Epic monsters must not instantly kill inexperienced players that do not
+understand what they are up against. There are numerous ways to prevent
+this, including blocking players from the part of your area where the
+epic monster resides, making your monster scare players away, or having
+your monster refuse to fight players below a certain level.
+
+To get to an epic monster, players must kill a 'high-level monster' (see
+the 'highlevelmonsters' file in this directory). The usual restrictions
+on the high-level monster apply, including the need for it to have a
+guard. Epic monsters count as one high-level monster, for the purposes
+of calculating how large your area must be, so currently you need to
+get Balance permission for the epic monster and have a minimum of 25
+rooms.
+
+Another restriction on epic monsters is that the maximum level of any
+monster on the Anguish map is 21. The maximum in the Westmap expansion
+is 23, and the maximum on the Infidian expansion is 25.
+
+** NOTE: Currently, no epic monsters will be approved for the existing
+         Anguish map, as we would like to encourage more areas for the
+         Infidian and Westmap expansions.
+
+Epic monsters have an impressively high treasure value. To avoid a flood
+of ridiculously powerful equipment, the treasure value must be split
+between a few different items. A suggestion to get players coming back
+to die to... err, to fight your epic monster: have a number of different
+sets of equipment, and randomly spawn different sets on it. Players will
+return to complete the set and/or try out the other equipment available.
+
+The 150% rule does not apply to epic monsters.
+
+The table that follows represents BARE MINIMUM values. You epic monster
+should be much more creative than simply setting the values per the
+table below.
+
+
+Level  WC   AC    HPS      SPELLS     TREASURE
+-----  --   --   -----    --------    --------
+
+ 20    27   29    480     25 @ 60%      1700
+ 21    29   31    630     30 @ 60%      1950
+ 22    32   34    930     36 @ 60%      2250
+ 23    36   37   1430     32 @ 70%      2600
+ 24    41   41   2430     38 @ 70%      3000
+ 25    47   45   4430     35 @ 80%      3450
+
+
+
+The Balance Team.

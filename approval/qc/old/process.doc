@@ -1,0 +1,211 @@
+How to get your project through QC:
+
+The job of Quality Control (QC) is to ensure that all new additions to
+AA meet the highest quality standards.  We do this by ensuring that the
+project works correctly, is well described, is coded efficiently, and is
+free of typos and grammatical errors.  In order to expedite your path
+through QC, please consider the following suggestions:
+
+
+GENERAL:
+
+1: The area or item must have a file detailing what the project is
+about, how to use it (or what to do in the area), and a bit of
+background. Often, the WORLD.INFO file will suffice, but make sure that
+it explains how to "operate" the project.  If you are submitting an area
+with more than a few rooms, please make a file called AREA.MAP providing
+a brief text map of the area.
+
+2: The area or item should be complete before it is submitted.  Do not
+submit projects you are "still working on".  There will be plenty of
+extra work for you to do while your project works its way through QC and
+Balance, do not expect to finish incomplete parts after submission.
+Before you submit, please go through the entire area to ensure that
+there are no obvious bugs and that everything is working as you intend
+it to.
+
+3: Go through your item or area and spell check it.  If there is a word
+you are uncertain about, look it up.  QC is here to verify that your
+area is typo free and uses accurate english, but we are not here to
+proofread for someone who is too lazy to do it himself or herself.  If
+you submit it with linguistic errors, it will only waste time for QC and
+take longer for your project (and everyone else's) to get finished.
+
+4: Have three of your wizard friends go through your area or play with
+your item, looking at it with a player's perspective.  Have them mention
+any errors, bugs, typos, or areas which can be improved upon.
+
+5: Ensure that your code is efficient.  Do not declare variables which
+will not be used, or declare variables globally when they can be
+declared inside a function.  If you have multiple monsters or items
+which are quite similar, create only one .c file for them and use the
+set_name, set_short, etc. for them when they are cloned.
+   
+6: When making descriptions, remember that set_long, add_item,
+add_noget, set_sound, set_smell, etc. all format automatically (do not
+need \n's for breaks).  Remember to make your descriptions consistent.
+
+7: Read all the messages on the reference board, and go over it again
+from time to time.  The reference board describes a wealth of functions
+which may not be covered in the conventional documentation which can add
+a lot of flavor to the area or item. Also take a look at the functions
+documented in /doc/lfun/*.
+ 
+8: Please use sensible names for filenames.  Not only can it make it easier
+for you not to get lost on what you're doing while creating the area, but
+it makes it a lot easier for QC to keep track of what's going on in the area
+between passes.
+
+ROOMS:
+
+1: Ensure that all of your rooms or items are well described in full
+sentences.  If you have a long description which mentions any objects,
+make sure that you have an add_item (and add_touch, add_sound,
+add_noget, and add_smell as appropriate) for each of them.  If your room
+contains some bald eagles, you should do descriptions for ({"eagle",
+"eagles","bald eagle","bald eagles","bird","birds"}).
+
+2: Please vary your set_short descriptions in your area.  Many players
+will use brief mode, and if all the short descriptions are the same it
+will be more difficult for them to get their bearings.
+
+3: Use complete sentences for all descriptions, as if someone was
+describing it for you. For example, if you have a tree in a room, your
+add_item should NOT be "A green tree.", but rather a full descriptive
+sentence like "It is a large leafy green tree. There are some broken
+branches near the bottom.".  Extraneous details (like the broken
+branches) will keep players guessing and add atmosphere to the area.  If
+you skimp on these, QC will make you put them in anyway, so save us both
+time and put them in before submitting.
+
+4: When making areas, inherit a baseroom to avoid duplication of
+functions and descriptions (add_items, add_smells, add_sounds,
+add_nogets, etc.) which are common to all or most rooms in the area.
+Instead of inheriting /room/room.c and adding all of these additional
+items to each room, you can make a baseroom.c (which inherits
+/room/room.c) and put these common functions there.  Some large areas
+may have multiple baserooms.  For example, an area may have a baseroom
+for all castle rooms, a baseroom for all jungle rooms, and a baseroom
+for all cavern rooms).
+ 
+5: Please use standard compass directions for your exits.  If there is a
+cave to the north, name the exit "north" instead of "cave".  In some
+circumstances, "enter" is also appropriate if the direction does not
+correspond to a compass direction (ie: a tent stands in a clearing).  In
+general, add your exits in the same order in your code, starting at
+north and going clockwise around the compass (ie: add_exit n, then ne,
+e, se, s, sw, w, nw, u, d.). When referring to directions in your
+description, use the full single-word name ("north" instead of "n",
+"southeast" instead of "se" or "south east"). This will add continuity
+to the game.
+
+6: Be sure to use ability checks when appropriate.  For instance, if a
+player can search your room, check the player's search ability.  If she
+can climb, check her climbing ability.
+
+7:  Go through your area like a player would.  Look at everything, try
+to do everything.  Make sure that everything you think a player would do
+or look at is accounted for.  Have a couple of friends do the same.
+
+
+NPCs:
+
+1: The set_short should not begin with a capital letter. Generally, when
+the short is not a proper name, it should begin with 'a' or 'an' (ie: "a
+blue tiger", "an elephant").
+ 
+2: Be sure to set the NPC race properly.  The standard default is
+'human'.  If you create a cat,  'set_race("feline");' would be
+appropriate.  Players should be able to interact with the creature by
+using its race as well as its name.
+ 
+3: After cloning a monster, make sure that they weild any weapon and
+wear any armour they might have.  "command("wield sword");" or
+"command("wear hauberk");" in the create will accomplish this.
+ 
+4: Give the monsters chats and a_chats, and make them consistent.  A
+monster called "Bozo the clown" (who probably wouldn't make it past
+world) should not have a chat of 'Bozo says: Hi' and 'The clown asks for
+a coin.' as another.  Test the chats by sitting in the room and watching
+the monster.  Make sure they don't say too much (chat value too low) or
+too little (chat value too high).
+ 
+5: When a monster starts a drama (a little story) in response to
+something a player says or does, make sure he doesn't reply to any new
+triggers while he's still busy with his first chat.
+ 
+6: Use add_emotion and add_keyword to your monsters.  Reference the
+/doc/build/int-monster file for details.  Intelligent monsters make the
+game a lot more lively and interesting.
+
+
+What QC Does:
+
+Once you have completed your area or item and reviewed the points above,
+you should go to the submissions office (/d/Qc/room/office) and submit
+your project.  Choose a single word to refer to your project as which is
+somewhat descriptive.  "newvill" or "tomb" are pretty good, "my_area"
+isn't.  Once it has been submitted, World will need to approve
+the project as being appropriate for the world of AA (make sure you
+consult with World before you start on it - if you spend days coding a
+moon base and it's rejected, you'll be pissed).
+
+After it has passed World, it will be in QC's domain.  There are three
+levels of QC: Alpha, Beta, and Final Approval.  The Alpha team will take
+your item or area and look through it.  Alpha will look for spelling and
+usage errors, and point out areas where your descriptions are
+inadequate.  Alpha will probably request a lot of add_items, add_nogets,
+etc. if you did not sufficiently describe your area.  Your area will
+probably be returned to you one or more times with suggestions from the
+Alpha team, which you should take under consideration before
+resubmitting.
+
+Please review /doc/approval/qc/alpha_checklist for a list of things that
+Alpha QC will be looking for.
+
+
+After Alpha has approved your area, the Bravo team will check it.  Bravo
+will concentrate on locating possible bug conditions and suggesting
+improvements to your code.
+
+Please review /doc/approval/qc/bravo_checklist for the Bravo guidelines.
+
+
+After your area has been given the go ahead from both Alpha and Bravo,
+the QC arch will do a final inspection of your area and provide final
+approval.
+
+In the final stage, World and Map will review any changes you've made
+to the area as it's gone through approval, and install it on the map.
+
+In addition to the QC process, you will need to get your item or area
+through Balance.  This process is outside the scope of this document,
+but it is recommended that you work with Balance and QC simultaneously.
+
+
+Other Sources:
+
+You may also want to read the following files:
+
+/doc/quality/approval
+/doc/quality/creation
+/d/Qc/doc/area_hints
+/d/Qc/doc/process.doc
+/doc/build/balance
+/doc/balance/*
+/doc/world/*
+/doc/map/*
+
+
+If you have addressed all of the above suggestions, your area should
+make it through QC quickly and painlessly.  If you have not bothered
+with these suggestions, you (and your QCer) may find the QC process to
+be long and frustrating.  Remember, we are all here on a volunteer basis
+and do this because we want to make AA a better place.  Our goal is to
+work _WITH_ the coding wizard to make the area the best it can be.
+Thank you for contributing to the mud with your projects as well.
+
+The QC Staff
+First version: bytre 5/26/94
+Revision one: sully 12/9/95
+Revision two: bytre  28-Feb-98

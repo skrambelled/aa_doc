@@ -1,0 +1,42 @@
+                         Notes on changes to code by others
+                    ======================================
+
+You may want to make an improvement/bugfix to some code that is already
+in the game, but was coded by some other wizard.  If you are the officially
+appointed maintainer of the code of the wizard in question, fine....
+
+Otherwise the text below applies to you.
+
+If the coding wizard is still active, you should not even think about
+submitting the change without talking to him/her first.  This is not
+only because anything else would be very impolite, but also because
+many wizards maintain their code offline, and might upload/overwrite
+any changes made without their knowledge.
+
+If the coding wizard is inactive, some special rules apply.
+
+1) If you are changing files, avoid any unnecessary changes.  For
+   example, do not make any changes to the formatting, even if it looks
+   "ugly" to you.
+
+   Why?
+
+   Well, QC always compares the original file with the modified one,
+   and formatting changes makes the file look very different, even if
+   the differences are not "real".  A large 'diff' file means that the
+   QC process will take much longer than otherwise.
+
+2) Document the changes properly.  Projects like this should not just
+   consist of the changed files, but also some .INFO files describing
+   which changes were made and why they were made.
+
+3) Any modified files should replace the older files and new files should
+   generally be in the same directory as the original project.  There is
+   one exception, though - a shopkeeper may be modified to sell an object
+   from another wizard's directory.  What QC will generally not allow is
+   something like a wizard replacing one room with a room located in his
+   directory, changing the add_exit()s in adjacent rooms - this disrupts
+   the overall integrity of the area.
+
+Finally, if the changes involve replacing an entire area, you need special
+approval.  Talk to the Senate members for information.

@@ -1,0 +1,65 @@
+------------------------=> Shield Guidelines <=-----------------------
+
+NOTE: We positively encourage coders to consider creating shields for their
+      monsters from low to high levels (not uniques).
+
+What follows are some basic guidelines about how to create balanced
+shields for use within Ancient Anguish. Although not strict limits, the
+guidelines here should be followed in almost all cases.
+
+Block AC:
+
+  int set_block_ac();
+
+  This function sets how good the shield is for blocking. The block AC
+  should be set as a number between 1 and 20, 19 and 20 being reserved for
+  unique and very powerful rare shields. Normally the value you set here
+  should be determined by what 'type' of shield it is, some suitable examples
+  of which are in the table below to act as guidelines.
+
+  Shield Type    |   Block AC range  |  Description
+  -------------------------------------------------------------------------
+  Buckler        |       1-10        | A very small round shield sometimes 
+                 |                   | worn on the forearm.
+  Small shield   |       3-12        | A small shield held in the hand 
+  Targe shield   |       5-13        | A medium sized oval shield.
+  Curved heater  |       7-15        | A tall, curved shield.
+  Kite shield    |       7-15        | A shield shaped... like a kite!
+  Tower shield   |      10-18        | A very tall shield of average width.
+  Wall shield    |      10-18        | A very wide shield of average height.  
+
+Shield weight:
+
+  int set_weight();
+
+  The weight of a shield should be somewhat proportional to its blocking
+  class but modified by what material it is made of. A good weight for a 
+  shield would be its block_ac divided by 4 rounded up.
+
+  Example:
+    A shield block_ac 3 should have a weight of 3/4 rounded up = 1.
+    A shield block_ac 15 should have a weight of 15/4 rounded up = 4.
+
+Shield value:
+
+  int set_value();
+
+  The value of a shield is determined by its block_ac and can be modified
+  a little for an unusual weight or craftsmanship. Suitable shield values
+  are listed in the table below.
+
+  Block AC |  Value  | Block AC |  Value  | Block AC |  Value 
+  --------------------------------------------------------------
+      1    |    10   |     8    |   200   |    15    |   600
+      2    |    25   |     9    |   250   |    16    |   675
+      3    |    50   |    10    |   300   |    17    |   750
+      4    |    75   |    11    |   350   |    18    |   825
+      5    |   100   |    12    |   400   |    19    |   N/A
+      6    |   125   |    13    |   450   |    20    |   N/A
+      7    |   150   |    14    |   525
+
+  If you have any questions regarding this document, please don't hesitate
+  to ask your nearest Balance team member. Happy coding.
+   
+
+The Balance Team.

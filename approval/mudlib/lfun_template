@@ -1,0 +1,19 @@
+SYNOPSIS
+  1.  List the function and thumbnail of what it does.
+        a.  to use ONLY one line (limit to less than 75 characters) 
+        b.  it is on the first line after the heading SYNOPSIS
+  2.  List the function declaration (without 'public', 'static' or 'varargs')
+      For varargs functions, list the different ways of calling it.
+
+VALID FOR
+  3.  Tell where it is valid for use. eg. room, xfun, monster, living.
+
+DESCRIPTION
+  4.  Tell how the function is used.
+
+EXAMPLE
+  5.  Give a nice clear example.  If newer wizards can understand it, 
+      it will help them learn more independently as well. 
+
+SEE ALSO
+  6.  Suggest a couple (typically 2 to 5) related docs to review.

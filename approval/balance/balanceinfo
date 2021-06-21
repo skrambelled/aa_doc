@@ -1,0 +1,78 @@
+NOTE: All submissions MUST have a balance.info document.
+
+Below you will find a sample of what we expect when you write your
+BALANCE.INFO file. Keep in mind that as you make changes to your area during
+the submission process, you should make updates to this file.
+
+
+NPCS:
+ - total number
+ - name and level
+ - armour classes (head/body/arm/leg)
+ - alignment
+ - weapon class
+ - list of treasure (equipment (name, value, special features) and/or coins)
+ - special abilities
+   - for example, if it carries a unique, buys/sells something, or heals
+     players.
+ - for example:
+
+----------------------------------------------------------------
+Name/Level:       H/B/A/L     Align   WC  Treasure/Value
+----------------------------------------------------------------
+3 Orcs (Lvl 5)    7/8/8/7      -20     7   dagger
+1 Rabbit(Lvl 3)   4/5/6/5       15     5    ---
+1 Guard(Lvl 16)   21/25/23/24  200    23   fine platemail (2500)
+----------------------------------------------------------------
+             Total Monsters: 5
+
+
+Rooms:
+ - if there are any objects in these rooms and their value
+ - if rooms have special abilities (e.g. shops/healing)
+ - e.g. forest75.c
+        This room offers the player +75 magic resistance if they lie on the
+        magical healing root.
+
+Miscellaneous:
+ - Objects/money not on an npc's corpse - how obtained, full value.
+ - This includes invisible tags.
+ - for example:
+
+---------------------------------------------------------------------------
+Name:           Value:    Information:
+---------------------------------------------------------------------------
+Woodsman's Axe   600      Guarded by spider. 1 per reboot.
+Green berry       12      Heals 3 hps. 5 can be picked in area per reset.
+Poison Ivy       Nil      Invisible tag in player's inventory. Extra look.
+                          Can damage. -1 Dex
+Coins             50      Hidden in locked drawer.
+Key               10      For drawer mentioned above. Found by searching
+                          woodpile.
+---------------------------------------------------------------------------
+
+
+Uniques:
+ - List of uniques, including why they are, the process that players will
+   follow in obtaining the unique.
+ - Value
+ - Special abilities.
+ - for example:
+
+-------------------------------------------------------------------------
+Name:           Value:  Special Ability:     How obtained:
+-------------------------------------------------------------------------
+Horn of Sexual  30000   +100 horny ability   Kill the giant horny rabbit.
+  Advancement
+-------------------------------------------------------------------------
+
+
+General Information:
+ - This final section should be for anything else you feel Balance should
+   know. If you have a mini quest in your area, please explain briefly how to
+   complete it and list the reward obtained.
+ - If you have any new and creative characteristics in your area, include
+   them here.
+
+
+The Balance Team.

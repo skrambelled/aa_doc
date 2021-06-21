@@ -1,0 +1,108 @@
+=============================================================================
+  A N C I E N T   A N G U I S H   M U D L I B   C O D E   R E V I E W
+
+(C) 1997 B. Watson. (Toshina@AncientAnguish)
+=============================================================================
+This document outlines things to check in a mudlib code review. 
+
+The source file, line number and section of this document, should be recorded
+along with the comment in code reviews. This is so that sections which turn
+out to provide no guideance can be removed..
+
+For issues found based on the coding standard document, record these as S1
+followed by the section of that document. eg. S1.2.3, indicates a problem
+with 2.3 of code_standard.
+
+-----------------------------------------------------------------------------
+Contents
+-----------------------------------------------------------------------------
+Standards
+Functions
+Variables
+Logic
+
+-----------------------------------------------------------------------------
+Standards
+-----------------------------------------------------------------------------
+S1.
+Check that the code, filenames, etc. comply with the mudlib coding standard. 
+See /d/Mudlib/doc/code_standard.
+
+-----------------------------------------------------------------------------
+Functions
+-----------------------------------------------------------------------------
+F1. 
+Check that functions are consistantly named within the file and as 
+compared to other mudlib files.
+
+F2.
+Check that all internal prototypes have function bodies defined.
+
+F3.
+Check that mixed parameters are type checked.
+
+F4.
+Check that all parameters passed to functions are used.
+
+F5.
+Check modularity and reuse
+  1. Groups of functions are not already available as an inheritable file
+  2. Groups of functions should be made into an inheritable file for use 
+     elsewhere
+
+-----------------------------------------------------------------------------
+Variables
+-----------------------------------------------------------------------------
+V1.
+Check correct use of "private" and "static" on global variables.
+
+V2.
+Check non-static global variables do not clash in name with other non-static
+global variables which may end up in the same object through inheritence.
+
+V3.
+Check variables are initalised correctly 
+ 1. Global variables are initalised before value is used
+ 2. Local variables are intalised before value is used
+
+V4.
+Check that all uses of -> and call_other are not done on 0.
+ 1. Functions might be passed 0
+ 2. Objects can destroy themselves when called
+ 3. enivornment(), this_player(), this_object() etc can sometimes be 0.
+
+V5.
+Check that array indexing is always within bounds.
+
+V6.
+Check that every global variable is used.
+
+V7. 
+Check that there are no global variables from inherited files directly 
+accessed.
+
+-----------------------------------------------------------------------------
+Logic
+-----------------------------------------------------------------------------
+L1.
+Check the bracketing on all formulas and if statments.
+
+L2.
+Check instances of = are not meant to be ==.
+
+L3.
+Check instances of == are not meant to be =.
+
+L4.
+Check loops
+ 1. Always terminate
+ 2. Properly initalised
+ 3. Correctly handle empty case
+
+L5.
+Check that case statements have breaks between them as appropriate.
+
+L6.
+Check non-void functions return a value in all cases. (Even if it is 0.)
+
+=============================================================================

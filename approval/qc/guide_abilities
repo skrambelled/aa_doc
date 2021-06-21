@@ -1,0 +1,51 @@
+SYNOPSIS
+Any actions that a mortal can use in your projects which are related to their
+'abilities' must perform an ability check. For example, if you have a room
+where a player can climb a cliff it needs to check the player's climbing
+ability, or if the player needs to search to find something it needs to check
+their searching ability, and so forth.
+
+Ability checks need to be set according to the difficulty of an area. If you
+are creating a newbie area you should not require players to have 80 climbing
+ability to climb up a tree, and to reach a high level monster a player should
+need more than 40 climbing ability to climb up a cliff to reach the monster.
+
+Using the code provided below, a good rule of thumb is to take the highest
+level monster in the area and multiply that by 4 to get the maximum ability
+check (MAX), and multiply the monster level by 2 for the minimum ability
+check (MIN).
+
+EXAMPLE
+#include <body_position.h>
+
+void init() {
+  ::init();
+  add_action("do_climb", "climb");
+}
+
+int do_climb(string place) {
+  if(place != "up" && place != "u" && place != "cliff") {
+    notify_fail("Perhaps you should 'climb up' instead?\n");
+    return 0;
+  }
+
+  if(this_player()->query_body_position() != STANDING) {
+    write("You must be standing.\n");
+    return 1;
+  }
+
+  if(this_player()->query_ability("climbing") > random(MAX-MIN)+MIN) {
+    write("You climb up the cliff.\n");
+    say(this_player()->query_name()+" climbs up the cliff.\n");
+    this_player()->move_player("silent", ROOM"example_cliff_top");
+    say(this_player()->query_name()+" arrives from below.\n");
+    this_player()->force_followers("climb up", this_object());
+    return 1;
+  }
+
+  write("You fail to climb up the cliff.\n");
+  return 1;
+}
+
+SEE ALSO
+'man qc'

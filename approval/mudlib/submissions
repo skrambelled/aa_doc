@@ -1,0 +1,9 @@
+Mudlib projects are submitted at and tracked by the approval clerk in the Qc
+office. However, all review of the project will in general be done by Mudlib.
+Mudlib projects that have World impact must pass a World review. Once a
+project is passed to Mudlib, an entry in the Mudlib job list will be created
+(goto /d/Mudlib/room/adm, 'jlist').
+
+It is advisable to consult Mudlib early on in the design phase of your
+project, to ensure that effort is not wasted working on a file that would
+need major rewriting or other work to be finally implemented.

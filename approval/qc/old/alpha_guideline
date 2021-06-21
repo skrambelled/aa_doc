@@ -1,0 +1,196 @@
+Proposed Alpha Standards:
+
+For area:
+ 
+  o  Check for internal logical consistency in the area.  If 
+     there is a quest, mini-quest, puzzle, are there sufficient 
+     and useful clues? 
+  o  Do rooms/npcs/objects which will reward special diligence 
+     or interaction have "clues" to tip off players?
+  o  Is the area lively?  Npcs should have a few features such 
+     as chats, keywords, emotions, and perhaps wandering.  
+     Descriptions should give additional information about the 
+     item looked at.
+  o  Base rooms, items and npcs should be used to avoid 
+     duplication of descriptions and code.  Multiple bases 
+     should be used if necessary.
+  o  Do the commands have syntactical usability? Can a person 
+     "press rock" as well as "press stone", "push rock",  
+     "push stone", etc?  Do notify_fails use the same verb 
+     the player used?
+  o  Does the area have features which can be utilized by 
+     various races and classes, such as the use of languages, 
+     or varying descriptions for rangers?  Suggestions for 
+     these features are often welcomed by new coders, who may 
+     not be aware of varying ways in which they can reward 
+     careful explorers of all races and classes.
+  o  Area should have Pueblo compatability.
+     - Signs should be preformatted and set for asciiart: man preformat and query_asciiart
+  o  Entire area should use either one or two spaces after 
+     periods, not both.
+  o  Entire area should use AA measurements.
+     - man measurement
+
+For each file:
+  
+  o  Check grammar.
+     - Most grammar errors result from non-native english 
+       speakers or punctuation.  There are no "common" 
+       problems here.  Learn to be aware of grammar in 
+       all the text you QC.  
+  o  Check spelling.
+     - Grep for certain words to check international spelling.
+       This is the most common spelling mistake after typos.
+       Colour, humour, honour, armour, odour, harbour, centre,
+       theatre, favourite, defence and mould are all 
+       correct.  Color, humor, honor, armor, odor, harbor,
+       center, theater, favorite, defense and mold
+       are not.
+     - Certain words and groups of words are often misused. 
+       Learn to watch for these and other common misuses:
+       in to is often used in place of into
+       alot is often used in place of a lot
+       homophones such as to, too and two are often confused
+  o  Code should be formatted nicely.
+     - There is no set standard here, but if the code is not 
+       readable it takes a reviewer much longer to do the check.
+     - Internal formatting of text messages should be handled
+       properly.  Writef, sayf and other autoformatting commands
+       should not be used unless the text is over two full lines
+       or over one full line containing variables.  Autoformatted 
+       text and standard commands such as set_long, add_item,
+       add_touch, etc. should not contain any '/n's.
+  o  Make sure there are no obvious bugs or errors.
+     - Directories should also be cleared of .dead, .old, and 
+       .c files that are not used before submitting for review. 
+  o  Each long description should use full sentences.
+  o  Each short description should be uncapitalized, unless it 
+     is a proper name.   
+  o  All functions should have proper returns ending them.
+  o  Avoid unnecessary variables.
+     - Check for any variable that can be removed by combining
+       two or more separate lines of code.
+  o  The use of message() can often replace a set of calls to
+     write() and say() when the text is similar.
+     - The use of message() is usually unsuitable when three 
+       parties are involved.
+  o  Filenames should be unique enough to know what goes where.
+     - Filenames like room1.c, room2.c, room3.c... often confuses 
+       a reviewer and adds time to the review.  Suggest changes 
+       to the coder if this is the case.
+     - Subdirectories should also be split into a logical order
+       such as:
+       areaname/doc
+       areaname/obj
+       areaname/npc
+       areaname/reply
+       areaname/room
+
+For room files:
+  
+  o  Descriptions of any sort in a room shouldn't reference
+     body_position, unless the description changes with 
+     each body_position.
+  o  Make sure that each noun mentioned in the long 
+     description has an add_item.
+  o  Make sure that each noun described in the long that 
+     someone could pick up has a no_get.
+     - Nogets should be physical reasons not emotional ones
+       such as "You don't feel like taking the box."
+  o  Functions such as add_touch, add_smell, and add_listen 
+     are _optional_ and may be suggested for those nouns which 
+     might logically (not conceivably) use them. 
+  o  Make suggestions for reasonable add_actions, such as 
+     "climb tree", etc, and other interactive features.  
+     - Many rooms are perfect for searching and should 
+       make use of the search command to display a more
+       interesting text to the player than the standard
+       fail, even if there is nothing there to find.
+     - Make sure that any ineractivity that might require  an
+       ability check has one (climbing, searching, swimming...)
+     - Interactivity that moves a player should check body_position
+       first to make sure they are in the appropriate stance to
+       do the action.
+     - If a player is moved in this manner, the code should allow
+       for any followers to attempt the same action.
+  o  Check furniture for interactivity.  Chairs, beds, etc. 
+     shouldn't return "You can't do that." without a logical 
+     explanation.
+     - In addition to 'normal' furniture many rooms have fixtures
+       which should allow interactivity: altars, meditation chambers,
+       fountains, chests, etc.  Learn to watch for these and to 
+       make appropriate suggestions to coders about using them.
+  o  Check lighting levels and outdoorsness.  
+  o  Make sure all doors and exits match.
+  o  Check for duplicate add_items, nogets, smells, touches, etc.
+  o  Containers mentioned in rooms should work as containers or
+     have logical reasons for not doing so: ie. a chest that 
+     doesn't open.
+  o  If an object mentioned in the room description changes for 
+     some reason (item taken, window opened, statue comes to life)
+     the description must also change.
+  o  If you have a window, add_window should be used and add_actions
+     or add_messages should account for players attempting to 
+     "open window" or "close window".
+
+For npc files:
+  
+  o  Make sure that all npcs have chats and a_chats.
+     - Chats and a_chats should not mention a weapon.
+  o  Make sure that npcs have a race and gender(if needed).
+  o  Make sure that npcs wear and wield their objects.
+  o  Objects should be separate files which are cloned to the 
+     npc, rather than created on the npc.
+  o  Encourage use of add_keyword and add_emotion to create 
+     interactive npcs.
+  o  Check all formatting in npc speech, and ask coder to turn 
+     off chats while keyword and dramas are running.
+     - Speech and emotes by npcs should be formatted like the 
+       equivalent in players.
+  o  Wandering monsters should not be recloned unless they are 
+     actually dead as opposed to just being in another room. 
+    
+For object files:
+ 
+  o  Make sure that set_material and set_identify are utilized. 
+     Additional features, such as set_touch and set_smell, may be 
+     suggested but are not a necessity.
+  o  Make sure that when objects are moved to a player, checks are
+     made to insure that the player can carry the item and that 
+     the proper weight is added.
+     - ob->query_weight() should be used instead of a hard-coded
+       weight.
+
+These would be minimum standards for QCing an area or
+project, a checklist that Alpha qcers  can refer to. Adinos's
+hat also is excellent at pointing to potential trouble spots,
+bugs, and inadequately described items. Descriptions, however,
+should meet the basic standards described above in order to
+be passed to Bravo, as opposed to the all-inclusive suggestions 
+that an automated tool may produce. Your human judgment is
+the most important part of the process.
+
+Alpha's  message to coders:
+
+Our basic standards are reasonable and forthright. You will
+get the same report on your area no matter who reviews it.
+Even if you aren't the world's most creative, knowledgeable,
+or imaginative coder, you can create an area and get it
+to meet AA's basic QC standards.
+
+We encourage as much interactivity and functionality
+in an area as your imagination can devise and your time
+and knowledge permit. Coders looking for a greater challenge 
+in terms of area complexity are encouraged to look at 
+/w/jerusulum/open/perfect_room.txt.
+
+Remember that our players enjoy those areas which include
+humor, creativity, brain-teasers, and 'rewards' for their 
+exploration. Hopefully, going through the QC process will help
+you develop ideas and techniques which you can use to
+make your future projects even more fun, both to code and to
+play.
+
+
+
+

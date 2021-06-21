@@ -1,0 +1,62 @@
+As far as QC is concerned, either of the two styles below are fine, just
+as long as you are consistent.
+
+
+                          --- STYLE I ---
+
+void somefunc()
+{
+    if (something)
+    {
+        dosomething;
+    }
+    else if (something else)
+    {
+        dosomething_else;
+    }
+    else
+    {
+        dosomething_different;
+    }
+}
+
+or, if you prefer an indent of 2, instead of 4:
+
+void somefunc()
+{
+  if (something)
+  {
+    dosomething;
+  }
+  else if (something else)
+  {
+    dosomething_else;
+  }
+  else
+  {
+    dosomething_different;
+  }
+}
+                          --- STYLE II ---
+
+void somefunc() {
+    if (something) {
+        dosomething;
+    } else if (something else) {
+        dosomething_else;
+    } else {
+        dosomething_different;
+    }
+}
+
+or, if you prefer an indent of 2, instead of 4:
+
+void somefunc() {
+  if (something) {
+    dosomething;
+  } else if (something else) {
+    dosomething_else;
+  } else {
+    dosomething_different;
+  }
+}

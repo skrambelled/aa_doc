@@ -1,0 +1,139 @@
+How do you get an area opened on Ancient Anguish?
+ 
+There are four major steps in getting an area opened:
+     1. World (mail world)
+     2. Balance (mail balance)
+     3. QC (mail qc)
+     4. Map (mail map)
+ 
+You should send email to all four groups, but only after ALL of the
+items in the four paragraphs below have been addressed.  You can send
+mail to all of them at relatively the same time, except for World
+which should be mailed long before the others, preferably before you
+even start the real coding.
+ 
+Please note that a tool has been developed to help speed up the process
+of approval by automation. There is a submissions room with a clerk, who
+keeps track of all the projects and thier current status. In addition to
+mailing the aforementioned groups, you should also submit your project
+with the clerk.
+
+
+World is responsible for the coordination of the AA world itself and
+for the logic within it. This includes theme, history and settings in 
+big terms. World works very close to Map, making sure that there is 
+place for your area in the world BEFORE you start coding it. World 
+will probably have some small opinions and suggestions concearning
+your area and should therefore be contacted as soon as you know you 
+will be coding an idea and know more or less what it is. As an 
+example it would be very sad if you should code a 70 rooms area with
+everything in them just to get a 'No, it doesn't fit into AA's theme.'
+by World. Another example of where World comes in handy is locating
+possible places before you've finished your code. Lets say you've 
+coded a castle, with windows at north and east. You've coded it so 
+that when someone looks out through a northern window, they see a
+beautfil lake and when looking out through an eastern window they
+see a small mountain. Only problem is, that there is no such place
+available on the Map and you have to recode all your rooms with 
+windows. If you had mailed World from the beginning World would've
+checked with Map and suggested appropriate locations and views
+from the windows. World wants to get a path to a document file
+briefly describing your area/idea, including theme and history, 
+and the kind of place you want it located at. It could be enough 
+with seven or eight lines, but it is of course the better the more 
+detailed the description is. What you should think of is stay 
+within AA's theme - Medeival Fantasy - and to avoid names and 
+plots from well-known books, stories, movies or games. Reading
+the files /doc/world and /doc/map/world will give you some more 
+information concerning our world. The file /doc/world/World.Concept
+will give the necessary information to create the file which 
+path you should mail World.
+
+Balance is responsible for making sure that your area does not upset
+the balance of the mud by introducing powerful weapons, strong armour,
+or too much money into the game.  These things are fine in moderation,
+but you don't, for example, want to give a level 2 monster a sword
+with weapon class 20 and 5000 coins so that any player can walk in and
+get the stuff with little or no danger of being killed and without even
+having to drink a beer.  A file should be prepared detailing the monsters
+weapons, and armours that can be found in your area.  The monsters section
+should have armour class, weapon class, level, money, alignment and any
+other pertinent information.  The file should also have all the weapons
+in your area and their weapon class, parry class, and value.  The list of
+armours should include armour class of all body parts and its value.  Any
+special magical powers or abilities that either the monsters, weapons,
+armours, or any other objects in your area should be listed as well.  The
+document should be named INFO.BALANCE and found in the sub-directory
+containing your area.  Any VERY good items should be unique.  For more
+info concerning the balance process and what is expected read:
+/doc/build/balance.
+ 
+QC is responsible for many things; spelling, grammar, plot, coding style,
+bugs, finding bugs, making sure that your descriptions are clear
+and interesting, that all items are described (add_item) and that it
+explains why you can't get an un-gettable item (add_noget), making sure
+that all rooms inherit a baseroom that includes query_x_coord and
+query_y_coord functions that allow the maps to work.  Areas should have
+a plot or story and should have lots of fun things to do and see.  Things
+to search for, smell, hear, touch, and other functions that can be added
+all add to the story and how fun an area is.  Areas should not be just
+a series of rooms where you can just walk in, kill, and walk out.  Think
+of them as mini-quests that have a goal or story.  The goal may be getting
+some healing potions, money, or a good weapon or armour.  Remember real
+good armours and weapons should be coded as uniques.  QC currently has a 3
+tiered system; starter, finisher and reviewer.  The starter will check
+your area for coding style, spelling, grammar, theme, and plot.  The
+finisher will briefly check for the same things, but also check for bugs.
+Making sure that all the functions work as they are supposed to, making
+sure that all the entrances and exits work, that the items weights are
+added and subtracted from a players carry correctly when they are gotten
+or dropped.  Check out any non-standard functions.  After passing these
+two steps the area goes to the reviewer.  The area should be ready to be
+opened at this time or nearly ready.  The reviewer should just look it
+over and maybe suggest a few things to polish it up.  At any stage the
+area could be bounced back to a lower step or out of QC altogether.  AA
+has a high standard and will not open inferior areas to mortals.  QC is
+not a de-typoing and grammar checking service.  The area should be
+relatively free from these types of errors before you mail QC.  If english
+is your second language you might want to have a few friends run through
+the area.  QC will also be happy to take a quick unofficial look at the
+area after you have some of the area done just to see if you are on the
+right track.  If the starter feels that the area is not ready to be
+considered by QC you will be told what needs to be fixed before you can
+resubmit a second time.  Remember QC is a long time consuming process,
+especially if you have not done your work properly.  At any one time QC
+is usually reviewing 10-20 areas in various stages, you are not the only
+wizard on the mud with an area to be approved.  Another excellent help
+file was written by Devlin and can be found in this directory, it is
+called creation.
+ 
+Map is responsible for assigning a position on the map and
+reviewing the documentation of the area that explains the plot, looks,
+history, special features and difficulty (low, mid or high level) of the
+area.  The document describing your area should be located in the same
+sub-directory as the area files and called: WORLD.INFO.  Before
+contacting Map you should scout the mud in search of an open space on
+the map that suits your area.  Don't have just one spot in mind pick 2
+or 3 and list them in order of preference.  If you have contacted 
+World correctly, you may already have a spot reserved with Map.  The 
+more sparsely the immediate area is populated with existing areas, the 
+more likely your first spot will be approved.  Don't expect your area 
+to be adjacent to the main village or Nepeth, as these areas are pretty 
+well populated. To the north and west of Hobbitat there are vast areas 
+of unpopulated forest and mountains begging to be developed, and there is
+a vast expanse of open map of various landscape types in the south of
+the realm.  When you and Map have agreed on a location, Map will implement
+it and your area will be part of the Ancient Anguish World!
+
+When all this is done there are two things left for you to do. First
+add your area in the Map-book lying at the Planners Board and then
+post your area's history on the History Board (up from the Planners 
+Board) together with the other histories on Ancient Anguish.
+
+
+Pretty simple huh?  That is all there is to it...
+ 
+ 
+
+First version: Feb 23 1994
+First revision: Dec 8 1995

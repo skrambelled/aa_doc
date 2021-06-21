@@ -1,0 +1,81 @@
+=============
+HEALING--FOOD
+=============
+
+When creating food for the game, there are a few things to keep in mind. The
+following information should give you a fairly good rundown on what Balance
+expects for food in the game. For definition purposes, there are two types of
+food: portable and non-portable. Portable food is, of course, food that a
+player can put in his inventory and carry around. Non-portable food is eaten
+right in the store.
+
+Having a small number of findable/killable food objects can make an area more
+interesting and realistic.
+
+
+=============================================================================
+                      HOW MUCH SHOULD FOOD WEIGHT?
+=============================================================================
+Food should always weigh at least one. We will not approve of weight zero
+items.
+
+
+=============================================================================
+                          WHAT IS STUFFING?
+=============================================================================
+Stuffing is a simply number that determines how much a player can eat. The
+number you should set stuffing to should be equal to the number of hps that
+the food heals.
+
+
+=============================================================================
+                       HOW MUCH CAN FOOD HEAL?
+=============================================================================
+Food should never heal more than 20 hit points. This is a maximum and should
+be used sparingly. The average food object should heal around 10.
+
+
+=============================================================================
+                      HOW MUCH SHOULD FOOD COST?
+=============================================================================
+Food should be valued according to the following formulas:
+
+                  x = # of hps the food heals.
+ 
+               A) Portable Food:      4x + (x^2) / 10
+               B) Non-portable Food:  3x + (x^2) / 10
+
+          Heals  Cost A  Cost B  |  Heals  Cost A  Cost B
+          -----  ------  ------     -----  ------  ------
+            1       4       3         11     56      45                       
+            2       8       6         12     62      50
+            3      12       9         13     68      55
+            4      17      13         14     75      61
+            5      22      17         15     82      67
+            6      27      21         16     89      73 
+            7      32      25         17     96      79
+            8      38      30         18    104      86      
+            9      44      35         19    112      93
+           10      50      40         20    120     100
+
+NOTE: Food that can not be inserted into containers can be 15% cheaper than
+      the above formulae.
+
+=============================================================================
+                  CAN I HAVE SOMEONE THAT SELLS FOOD?
+=============================================================================
+Balance would like to evenly spread the amount of healing entering the game.
+If, however, your area and that part of the map justifies a food seller, you
+can discuss accomodations with a balancer prior to submission.
+
+If you are permitted to have a seller, there are a few things to keep in
+mind:
+ - food cannot be unlimited. After about 1000 hps worth of food each reset,
+   the seller should run out of food.
+ - no more than 150 hps worth of food should be sold to a single player each
+   reset.
+ - these numbers are for high level healing. If you have a newbie-level food
+   seller, the numbers should be adjusted accordingly. Talk to a balancer.
+
+
+The Balance Team.

@@ -1,0 +1,63 @@
+BALANCE IS
+
+Ensuring that the game is challenging and enjoyable for all players,
+regardless of their ability at the game. This means that a Balancer must have
+a reasonably in-depth knowledge of the game and how players of different
+ability levels perceive the level of interest and difficulty.
+
+Sid Meier once said, "A game is a collection of interesting choices". This
+can be applied to Balance in the sense that if one particular class, guild,
+weapon, armour, item, npc, etc is the best, then the player does not have an
+interesting choice to make. Blurring the distinction of what is the best
+(by making something suitable for certain situations and weaker in others)
+gives players interesting choices to make. It also gives them the opportunity
+to debate the merits of various choices and experiment with different
+combinations, etc, etc.
+
+Balance is a dynamic concept, since new content is continuously added to the
+game. It is best to keep some stability for the players by modifying the new
+content rather than adjusting the existing content, where possible. It is
+better to hold up an almost-approved project to get the balance right than to
+implement it, then downgrade it. Players don't like this and downgrades of
+implemented content should be avoided where possible.
+
+
+PRACTICAL DETAILS
+
+The Balance Arch is ultimately responsible for the Balance committee. The
+Arch handles the approving of concepts (where a wizard discusses their idea
+before writing the world.info) and world.infos (where a member of World
+requests that Balance looks at a world.info before it is approved). The Arch
+leads internal Balance discussion on policy changes and is responsible for
+the appointment, training and retiring of committee members. The Arch is also
+responsible for ensuring that there is someone available to take over as Arch
+on a temporary or permanent basis. The Arch is also responsible for the
+maintenance and improvement of the applicable mudlib and domain code related
+to Balance (e.g. the Balance daemon and the /d/Balance/ code) and all Balance
+documentation (these tasks can be delegated). The Arch is the final word on
+all decisions relating to Balance, though the committee members have the
+right and the obligation to speak with other members of the Senate should
+they have concerns over the Arch's judgement.
+
+The Final Approvers consist of the Arch and all members of the Balance
+committee that the Arch has appointed as Final Approvers. A Final Approver
+has the ability to give Balance approval to a project in the queue (i.e. they
+'bapprove' the project), and has the responsibility to only give said
+approval when they have reviewed the project in question. Final Approvers
+also have the authority to reject a project.
+
+All other members of the Balance committee are considered to be Assistants,
+being trained and gathering experience so that the Arch can appoint them as
+Final Approvers. On first appointment to the Balance committee, an Assistant
+drafts a review and has it checked over by a Final Approver before returning
+the project. When an Assistant can no longer find any more issues with a
+project, he or she 'approves' it and passes the project to 'Final'. A Final
+Approver will then review the project as normal, providing helpful comments
+to the Assistant on the Assistant's reviews and any issues still remaining in
+the project. The Final Approver will provide recommendations to the Arch on a
+particular Assistant's progression and suitability for appointment as a Final
+Approver. Assistants can recommend to a Final Approver that a project be
+rejected.
+
+All Balance members should make use of the Balance board and line for queries
+and other communication.

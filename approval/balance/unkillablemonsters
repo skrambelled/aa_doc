@@ -1,0 +1,16 @@
+As a rule, no monsters are unkillable. However, there may be circumstances
+(i.e. shopkeepers in new parts of the map) where monsters need to be
+unkillable to keep the game moving.
+
+If you would like to deter players from killing your npc, there are a number
+of ways we can suggest you do so:
+  - set_ep(0) - this means that the player gets no experience from the kill.
+  - the monster carries no equipment or treasure.
+  - in addition to the above, we can raise weapon class, armour class and
+    healthpoints to a maximum to make the monster extremely difficult.
+
+If you feel that your monster warrants being unkillable, please discuss this
+with a balance member prior to submission.
+
+
+The Balance Team.
