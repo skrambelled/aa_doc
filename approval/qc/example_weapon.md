@@ -1,3 +1,6 @@
+# Example weapon
+
+```C
 #pragma strict_types
 #include <weapon_lib.h>
 inherit "obj/weapon";
@@ -27,3 +30,4 @@ void create() {
   set_damage(9);
   set_parry_ac(14);
 }
+```

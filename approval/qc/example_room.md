@@ -1,3 +1,6 @@
+# Example room
+
+```C
 #pragma strict_types
 #include "../example_header.h"
 #include <room.h>
@@ -52,3 +55,4 @@ void reset() {
     monster->move(this_object());
   }
 }
+```

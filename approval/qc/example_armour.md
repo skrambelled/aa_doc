@@ -1,3 +1,6 @@
+# Example armour
+
+```C
 #pragma strict_types
 #include <armour_lib.h>
 inherit "obj/armour";
@@ -26,3 +29,4 @@ void create() {
   set_hbody_ac(10);
   set_armour(PLATEMAIL);
 }
+```

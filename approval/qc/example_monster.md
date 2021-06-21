@@ -1,3 +1,6 @@
+# Example monster
+
+```C
 #pragma strict_types
 #include "../example_header.h"
 #include <living.h>
@@ -39,3 +42,4 @@ void create() {
   clone_object(WEAPON"example_weapon")->move(this_object());
   command("wield shortsword");
 }
+```

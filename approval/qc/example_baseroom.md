@@ -1,3 +1,6 @@
+# Example baseroom
+
+```C
 #pragma strict_types
 inherit "room/room";
 
@@ -25,3 +28,4 @@ void create() {
 
 int query_x_coord() { return 0; }
 int query_y_coord() { return 0; }
+```
