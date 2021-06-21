@@ -7,6 +7,7 @@ object monster;
 
 void create() {
   ::create();
+
   set_outdoors(W_CAN_HEAR);
   set_short("inside a barracks");
   set_long("You are inside the entrance to some sort of military barracks. "
@@ -22,7 +23,7 @@ void create() {
     "smell": "You smell the barracks and the scent of wood overwhelms you.",
     "sound": "You listen to the barracks and hear conversations nearby.",
     "taste": "You taste the barracks and dislike the woody tang.",
-    "touch": "You touch the barracks and admire the quality construction.",
+    "touch": "You touch the barracks and admire the quality construction."
   ]));
 
   add_senses(({"short hallway", "long hallway", "hallway"}), ([
@@ -32,7 +33,7 @@ void create() {
     "smell": "You must be closer in order to smell the hallway.",
     "sound": "You must be closer in order to listen to the hallway.",
     "taste": "You must be closer in order to taste the hallway.",
-    "touch": "You must be closer in order to touch the hallway.",
+    "touch": "You must be closer in order to touch the hallway."
   ]));
 
   monster = clone_object(MONSTER"example_monster");
@@ -40,11 +41,12 @@ void create() {
 
   add_exit(ROOM"example_cache", "east");
   add_exit(ROOM"example_meeting", "south");
-  add_exit(ROOM"example_centre", "out");
+  add_exit(MAPENTER, "out");
 }
 
 void reset() {
   ::reset();
+
   if(!monster) {
     monster = clone_object(MONSTER"example_monster");
     monster->move(this_object());

@@ -1,47 +1,42 @@
 SYNOPSIS
+-----------------------------------------------------------------------------
 If you would like to make an improvement/bug fix to some code that is already
 installed into the game (projects accessible by mortals), whether it is your
 own code or someone else's, then follow the steps outlined below.
 
-EXAMPLE
-Your Code: you can find bugs, typos, ideas, and praises that mortals have
-submitted using those in-game commands by checking /w/wizardname/log/ for
-those files.
+DESCRIPTION
+-----------------------------------------------------------------------------
+Any bugs, typos, ideas, and praises that mortals have submitted using those
+in-game commands can be found inside the /w/wizardname/log/ directory.
 
-If the issue is a simple bug or typo then you can get any arch to proofread
+If the issue is a simple bug or typo then you can get any Arch to proofread
 your changes and then with their approval proceed with installing the update.
 Be aware that all changes are logged and trying to sneak in unapproved tweaks
 can result in consequences.
 
-If the change is complicated or could result in big changes to the mortal
+If the tweak is complicated or could result in big changes to the mortal
 experience, such as altering a monster's stats, or the stats on a weapon or
-armour, you must officially submit the fix as a project to Quality Control
-with proper documentation of what is changing and why or at least contact
-them first and see how you should handle the change.
+armour, you must officially submit the fix as a project to the queue with
+proper documentation of what is changing and why.
 
-Not Your Code: check to see if the author is still active and then speak with
-them first about the issue. If they would like to fix it themselves let them,
-or if they are okay with you doing it then that is fine too, so long as you
-get permission first and follow the proper steps as if it were your own code.
+If the code in question is not your own you must first check to see if the
+author is still active and then speak with them about the issue. If they
+would like to fix it themselves let them, or if they are okay with you doing
+it then that is fine too, so long as you follow the proper steps to fix it.
 This communication is important because a coder might be maintaining their
-code offline and when they go to upload in the future it may overwrite and
-undo whatever changes were made so that needs to be taken into consideration.
+code offline and when they go to upload in the future it may overwrite it.
 
-If the author is refusing to make a change, and the issue is a bug or
-something that is negatively affecting mortals and/or unintended then speak
-to the Quality Control Arch about the issue.
-
-If the author is inactive then some special rules apply. First, check if the
-coder has a will in their directory and what it says, and be mindful of that.
-Next, put the fix together with the relevant information files and submit it
-as a project to the queue.
+If the author is refusing to make a change, and the issue is negatively
+affecting players, then speak to the Quality Control Arch about it.
 
 Huge changes, such as revamping or replacing an entire area will require
-special approval from the Senate.
+special approval from the Senate, unless a "will" document is present inside
+the owner's directory that specifies otherwise.
 
 If you are in doubt or have any questions please ask the Quality Control Arch
 before attempting to proceed with changes that might have repercussions or
 are large in scope, even if they are necessary changes.
 
 SEE ALSO
+-----------------------------------------------------------------------------
 'man qc'

@@ -1,25 +1,31 @@
 SYNOPSIS
+-----------------------------------------------------------------------------
 Any actions that a mortal can use in your projects which are related to their
 'abilities' must perform an ability check. For example, if you have a room
 where a player can climb a cliff it needs to check the player's climbing
 ability, or if the player needs to search to find something it needs to check
 their searching ability, and so forth.
 
-Ability checks need to be set according to the difficulty of an area. If you
-are creating a newbie area you should not require players to have 80 climbing
-ability to climb up a tree, and to reach a high level monster a player should
-need more than 40 climbing ability to climb up a cliff to reach the monster.
+DESCRIPTION
+-----------------------------------------------------------------------------
+Ability checks need to be set according to the difficulty of an area, which
+is determined by analyzing the levels of monsters within it and using the
+provided formula to set the ability checks accordingly.
 
-Using the code provided below, a good rule of thumb is to take the highest
-level monster in the area and multiply that by 4 to get the maximum ability
-check (MAX), and multiply the monster level by 2 for the minimum ability
-check (MIN).
+Take the highest level monster in the area and multiply that by 4 to get the
+maximum ability check (MAX), and multiply the monster level by 2 for the
+minimum ability check (MIN). Once you have these numbers calculated you will
+replace the "MAX/MIN" with those results. In other words, if your area has a
+level 19 monster then you would end up with random(76-38)+38 as the outcome.
+This formula gives players a consistant experience from area to area.
 
 EXAMPLE
+-----------------------------------------------------------------------------
 #include <body_position.h>
 
 void init() {
   ::init();
+
   add_action("do_climb", "climb");
 }
 
@@ -37,7 +43,7 @@ int do_climb(string place) {
   if(this_player()->query_ability("climbing") > random(MAX-MIN)+MIN) {
     write("You climb up the cliff.\n");
     say(this_player()->query_name()+" climbs up the cliff.\n");
-    this_player()->move_player("silent", ROOM"example_cliff_top");
+    this_player()->move_player("silent", ROOM"cliff_top");
     say(this_player()->query_name()+" arrives from below.\n");
     this_player()->force_followers("climb up", this_object());
     return 1;
@@ -48,4 +54,5 @@ int do_climb(string place) {
 }
 
 SEE ALSO
+-----------------------------------------------------------------------------
 'man qc'
