@@ -61,4 +61,4 @@ int do_climb(string place) {
 
 ## SEE ALSO
 
-- [qc](./qc/README.md)
+- [qc](./README.md)

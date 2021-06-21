@@ -48,4 +48,4 @@ void some_function() {
 
 ## SEE ALSO
 
-- [qc](./qc/README.md)
+- [qc](./README.md)
