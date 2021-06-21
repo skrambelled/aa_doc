@@ -1,6 +1,6 @@
 # Example room
 
-```C
+```js
 #pragma strict_types
 #include "../example_header.h"
 #include <room.h>

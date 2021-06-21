@@ -1,6 +1,6 @@
 # Example monster
 
-```C
+```js
 #pragma strict_types
 #include "../example_header.h"
 #include <living.h>

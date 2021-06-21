@@ -1,6 +1,6 @@
 # Example baseroom
 
-```C
+```js
 #pragma strict_types
 inherit "room/room";
 

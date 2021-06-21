@@ -1,6 +1,6 @@
 # Example header
 
-```C
+```js
 #define MAPENTER "/room/map/m0.0"
 #define PATH     "/w/wizardname/areaname/"
 #define ROOM     PATH"room/"

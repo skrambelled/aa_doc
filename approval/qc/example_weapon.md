@@ -1,6 +1,6 @@
 # Example weapon
 
-```C
+```js
 #pragma strict_types
 #include <weapon_lib.h>
 inherit "obj/weapon";

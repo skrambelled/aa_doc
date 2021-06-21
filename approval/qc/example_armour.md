@@ -1,6 +1,6 @@
 # Example armour
 
-```C
+```js
 #pragma strict_types
 #include <armour_lib.h>
 inherit "obj/armour";
