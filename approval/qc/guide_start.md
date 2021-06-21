@@ -28,6 +28,7 @@ floor, walls, wall, ceiling, etcetera, all established so that you do not
 need to repeat those in every room. Below is a visual explanation of how base
 files work, and how they can even inherit each other.
 
+```
                            BASE_room
                                |
               ---------------------------------
@@ -37,6 +38,7 @@ files work, and how they can even inherit each other.
       -----------------                ---------------
       |               |                |             |
 forests_north   forests_south     tents_large   tents_small
+```
 
 Once you have planned out all of your rooms in advance and created base
 files, then you can start working on the rooms themselves which will not need
