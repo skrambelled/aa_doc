@@ -1,0 +1,30 @@
+INTRODUCTION
+-----------------------------------------------------------------------------
+The four departments that oversee approval of projects in the queue are
+World, Quality Control, Balance, and Map. If you have questions you can mail
+those departments using 'mail <world/qc/balance/map>' respectively, and a
+team member will reply.
+
+DEPARTMENTS
+-----------------------------------------------------------------------------
+The purpose of the World department is to make sure that the game's overall
+theme is maintained, and to create a cohesive and consistent theme that is
+free of cliches or otherwise undesirable features.
+
+The purpose of the Quality Control department is to make sure that each
+project is coded according to the established standards, is free of typos and
+grammatical errors, is free of bugs, and provides an intuitive and highly
+polished experience for players.
+
+The purpose of the Balance department is to make sure that the project's
+monsters and objects of all types are both reasonable for the level and
+difficulty of the area, and also consistent with the established guidelines.
+
+The purpose of the Map department is to make sure the layout of the landscape
+around Oerthe is cohesive and consistent, and fits the game's theme.
+
+Use 'help wizardlist' to see a list of the departments and their members.
+
+SEE ALSO
+-----------------------------------------------------------------------------
+balance, map, world, qc
